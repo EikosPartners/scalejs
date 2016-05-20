@@ -1,18 +1,17 @@
 /*global define*/
 /*jslint unparam:true*/
-define(function () {
+define([
+    'scalejs.core',
+    'scalejs.extensions'
+],function (core) {
+    
     'use strict';
-
-    return {
-        load: function (name, req, onLoad, config) {
-            req(['scalejs!core', 'scalejs!extensions'], function (core) {
-                if (config.isBuild) {
-                    onLoad();
-                } else {
-                    var sandbox = core.buildSandbox(name);
-                    onLoad(sandbox);
-                }
-            });
-        }
-    };
+    
+    // create a sandbox to shim existing requires
+    // give ability to generate new sandbox if desired.
+    var sandbox = core.buildSandbox('main', core.object.merge({
+        buildSandbox: core.buildSandbox
+    }));
+    
+    return sandbox;
 });

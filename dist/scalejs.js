@@ -1,6 +1,6 @@
 /*global define*/
 define('scalejs',[],function () {
-    
+    'use strict';
     var extensionNames;
 
     return {
@@ -36,7 +36,7 @@ define('scalejs',[],function () {
 
                 moduleNames.push('scalejs.application');
 
-                req(['scalejs!extensions'], function () {
+                req(['scalejs.extensions'], function () {
                     req(moduleNames, function () {
                         var application = arguments[arguments.length - 1],
                             modules = Array.prototype.slice.call(arguments, 0, arguments.length - 1);
@@ -56,9 +56,7 @@ define('scalejs',[],function () {
         },
 
         write: function (pluginName, moduleName, write) {
-            if (pluginName === 'scalejs' && moduleName.indexOf('application') === 0) {
-                write('define("scalejs.extensions", ' + JSON.stringify(extensionNames) + ', function () { return Array.prototype.slice(arguments); })');
-            }
+                // not sure what this does
         }
     };
 });
@@ -71,7 +69,7 @@ define('scalejs',[],function () {
 
 /*global define*/
 define('scalejs.base.type',[],function () {
-    
+    'use strict';
 
     /**
      * Detects the type of the passed object
@@ -246,7 +244,7 @@ define('scalejs.base.object',[
 ], function (
     type
 ) {
-    
+    'use strict';
 
     var is = type.is;
 
@@ -481,7 +479,7 @@ define('scalejs.base.array',[
 ], function (
     object
 ) {
-    
+    'use strict';
 
     var valueOrDefault = object.valueOrDefault;
 
@@ -595,7 +593,7 @@ define('scalejs.base.log',[
 ], function (
     object
 ) {
-    
+    'use strict';
 
     // Workaround for IE8 and IE9 - in these browsers console.log exists but it's not a real JS function.
     // See http://stackoverflow.com/a/5539378/201958 for more details
@@ -729,7 +727,7 @@ define('scalejs.base',[
     object,
     type
 ) {
-    
+    'use strict';
 
     return {
         type:   type,
@@ -752,7 +750,7 @@ define('scalejs.core',[
 ], function (
     base
 ) {
-    
+    'use strict';
 
     // Imports
     var has         = base.object.has,
@@ -976,7 +974,6 @@ define('scalejs.core',[
 
 });
 
-
 /**
  * Application manages the life cycle of modules.
  * @namespace scalejs.application
@@ -985,11 +982,11 @@ define('scalejs.core',[
 
 /*global define*/
 define('scalejs.application',[
-    'scalejs!core'
+    'scalejs.core'
 ], function (
     core
 ) {
-    
+    'use strict';
 
     var addOne  = core.array.addOne,
         toArray = core.array.toArray,
@@ -1131,19 +1128,18 @@ define('scalejs.application',[
 
 /*global define*/
 /*jslint unparam:true*/
-define('scalejs.sandbox',[],function () {
+define('scalejs.sandbox',[
+    'scalejs.core',
+    'scalejs.extensions'
+],function (core) {
     
-
-    return {
-        load: function (name, req, onLoad, config) {
-            req(['scalejs!core', 'scalejs!extensions'], function (core) {
-                if (config.isBuild) {
-                    onLoad();
-                } else {
-                    var sandbox = core.buildSandbox(name);
-                    onLoad(sandbox);
-                }
-            });
-        }
-    };
+    'use strict';
+    
+    // create a sandbox to shim existing requires
+    // give ability to generate new sandbox if desired.
+    var sandbox = core.buildSandbox('main', core.object.merge({
+        buildSandbox: core.buildSandbox
+    }));
+    
+    return sandbox;
 });

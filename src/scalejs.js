@@ -36,7 +36,7 @@ define(function () {
 
                 moduleNames.push('scalejs.application');
 
-                req(['scalejs!extensions'], function () {
+                req(['scalejs.extensions'], function () {
                     req(moduleNames, function () {
                         var application = arguments[arguments.length - 1],
                             modules = Array.prototype.slice.call(arguments, 0, arguments.length - 1);
@@ -56,9 +56,7 @@ define(function () {
         },
 
         write: function (pluginName, moduleName, write) {
-            if (pluginName === 'scalejs' && moduleName.indexOf('application') === 0) {
-                write('define("scalejs.extensions", ' + JSON.stringify(extensionNames) + ', function () { return Array.prototype.slice(arguments); })');
-            }
+                // not sure what this does
         }
     };
 });

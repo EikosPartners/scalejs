@@ -6,7 +6,7 @@
 
 /*global define*/
 define([
-    'scalejs!core'
+    'scalejs.core'
 ], function (
     core
 ) {
