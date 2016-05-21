@@ -5,12 +5,8 @@
  */
 
 /*global define*/
-define([
-    './scalejs.base.type'
-], function (
-    type
-) {
-    'use strict';
+import type from './scalejs.base.type';
+    
 
     var is = type.is;
 
@@ -221,7 +217,7 @@ define([
         });
     }
 
-    return {
+    export default {
         has:            has,
         valueOrDefault: valueOrDefault,
         merge:          merge,
@@ -231,4 +227,4 @@ define([
         stringify:      stringify
     };
 
-});
+

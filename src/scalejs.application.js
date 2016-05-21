@@ -5,12 +5,8 @@
  */
 
 /*global define*/
-define([
-    'scalejs.core'
-], function (
-    core
-) {
-    'use strict';
+import core from 'scalejs.core';
+    
 
     var addOne  = core.array.addOne,
         toArray = core.array.toArray,
@@ -142,10 +138,10 @@ define([
         stopAll();
     }
 
-    return {
+    export default {
         registerModules:registerModules,
         run:            run,
         exit:           exit
     };
 
-});
+

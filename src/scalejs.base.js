@@ -3,23 +3,16 @@
  */
 
 /*global define*/
-define([
-    './scalejs.base.array',
-    './scalejs.base.log',
-    './scalejs.base.object',
-    './scalejs.base.type'
-], function (
-    array,
-    log,
-    object,
-    type
-) {
-    'use strict';
+import array from './scalejs.base.array';
+import log from './scalejs.base.log';
+import object from './scalejs.base.object';
+import type from './scalejs.base.type';
+    
 
-    return {
+    export default {
         type:   type,
         object: object,
         array:  array,
         log:    log
     };
-});
+

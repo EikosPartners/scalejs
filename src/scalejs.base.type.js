@@ -5,8 +5,8 @@
  */
 
 /*global define*/
-define(function () {
-    'use strict';
+
+    
 
     /**
      * Detects the type of the passed object
@@ -162,9 +162,9 @@ define(function () {
         return v === type;
     }
 
-    return {
+    export default {
         is:      is,
         typeOf:  typeOf
     };
 
-});
+

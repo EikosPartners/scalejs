@@ -5,12 +5,8 @@
  */
 
 /*global define,console,navigator*/
-define([
-    './scalejs.base.object'
-], function (
-    object
-) {
-    'use strict';
+import object from './scalejs.base.object';
+    
 
     // Workaround for IE8 and IE9 - in these browsers console.log exists but it's not a real JS function.
     // See http://stackoverflow.com/a/5539378/201958 for more details
@@ -86,7 +82,7 @@ define([
         return 'Error: ' + message + '\nStack: ' + stack;
     }
 
-    return {
+    export default {
         /**
          * Logs to the console with no level
          * @method log
@@ -126,4 +122,4 @@ define([
         formatException: formatException
     };
 
-});
+

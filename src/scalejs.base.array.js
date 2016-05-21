@@ -5,12 +5,8 @@
  */
 
 /*global define*/
-define([
-    './scalejs.base.object'
-], function (
-    object
-) {
-    'use strict';
+import object from './scalejs.base.object';
+    
 
     var valueOrDefault = object.valueOrDefault;
 
@@ -101,7 +97,7 @@ define([
         return copy(list, start, count);
     }
 
-    return {
+    export default {
         addOne:     addOne,
         removeOne:  removeOne,
         removeAll:  removeAll,
@@ -110,4 +106,4 @@ define([
         toArray:    toArray
     };
 
-});
+
