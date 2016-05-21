@@ -91,6 +91,8 @@ import base from './scalejs.base';
                     'See following exception for more details.',
                     ex);
         }
+        
+        return extension;
     }
 
     /**
