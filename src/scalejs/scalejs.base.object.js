@@ -6,7 +6,7 @@
 
 /*global define*/
 define([
-    '../scalejs.base.type'
+    'scalejs/scalejs.base.type'
 ], function (
     type
 ) {

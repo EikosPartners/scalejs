@@ -68,7 +68,7 @@ define('scalejs',[],function () {
  */
 
 /*global define*/
-define('scalejs.base.type',[],function () {
+define('scalejs/scalejs.base.type',[],function () {
     'use strict';
 
     /**
@@ -240,7 +240,7 @@ define('scalejs.base.type',[],function () {
 
 /*global define*/
 define('scalejs/scalejs.base.object',[
-    '../scalejs.base.type'
+    'scalejs/scalejs.base.type'
 ], function (
     type
 ) {
@@ -474,7 +474,7 @@ define('scalejs/scalejs.base.object',[
  */
 
 /*global define*/
-define('scalejs.base.array.js',[
+define('scalejs/scalejs.base.array.js',[
     'scalejs/scalejs.base.object'
 ], function (
     object
@@ -588,7 +588,7 @@ define('scalejs.base.array.js',[
  */
 
 /*global define,console,navigator*/
-define('scalejs.base.log',[
+define('scalejs/scalejs.base.log',[
     'scalejs/scalejs.base.object'
 ], function (
     object
@@ -717,10 +717,10 @@ define('scalejs.base.log',[
 
 /*global define*/
 define('scalejs/scalejs.base',[
-    '../scalejs.base.array.js',
-    '../scalejs.base.log',
-    './scalejs.base.object',
-    '../scalejs.base.type'
+    'scalejs/scalejs.base.array.js',
+    'scalejs/scalejs.base.log',
+    'scalejs/scalejs.base.object',
+    'scalejs/scalejs.base.type'
 ], function (
     array,
     log,
