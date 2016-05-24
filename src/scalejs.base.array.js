@@ -6,7 +6,7 @@
 
 /*global define*/
 define([
-    './scalejs.base.object'
+    'scalejs/scalejs.base.object'
 ], function (
     object
 ) {

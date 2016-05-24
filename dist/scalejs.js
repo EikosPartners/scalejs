@@ -239,8 +239,8 @@ define('scalejs.base.type',[],function () {
  */
 
 /*global define*/
-define('scalejs.base.object',[
-    './scalejs.base.type'
+define('scalejs/scalejs.base.object',[
+    '../scalejs.base.type'
 ], function (
     type
 ) {
@@ -474,8 +474,8 @@ define('scalejs.base.object',[
  */
 
 /*global define*/
-define('scalejs.base.array',[
-    './scalejs.base.object'
+define('scalejs.base.array.js',[
+    'scalejs/scalejs.base.object'
 ], function (
     object
 ) {
@@ -589,7 +589,7 @@ define('scalejs.base.array',[
 
 /*global define,console,navigator*/
 define('scalejs.base.log',[
-    './scalejs.base.object'
+    'scalejs/scalejs.base.object'
 ], function (
     object
 ) {
@@ -716,11 +716,11 @@ define('scalejs.base.log',[
  */
 
 /*global define*/
-define('scalejs.base',[
-    './scalejs.base.array',
-    './scalejs.base.log',
+define('scalejs/scalejs.base',[
+    '../scalejs.base.array.js',
+    '../scalejs.base.log',
     './scalejs.base.object',
-    './scalejs.base.type'
+    '../scalejs.base.type'
 ], function (
     array,
     log,
@@ -746,7 +746,7 @@ define('scalejs.base',[
 /*global define*/
 /// <reference path="../Scripts/es5-shim.js" />
 define('scalejs.core',[
-    './scalejs.base'
+    'scalejs/scalejs.base'
 ], function (
     base
 ) {

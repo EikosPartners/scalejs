@@ -7,7 +7,7 @@
 /*global define*/
 /// <reference path="../Scripts/es5-shim.js" />
 define([
-    './scalejs.base'
+    'scalejs/scalejs.base'
 ], function (
     base
 ) {

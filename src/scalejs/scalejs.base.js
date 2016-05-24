@@ -4,10 +4,10 @@
 
 /*global define*/
 define([
-    './scalejs.base.array',
-    './scalejs.base.log',
+    '../scalejs.base.array.js',
+    '../scalejs.base.log',
     './scalejs.base.object',
-    './scalejs.base.type'
+    '../scalejs.base.type'
 ], function (
     array,
     log,
