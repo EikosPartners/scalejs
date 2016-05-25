@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Provides logging functionality to scalejs base
  * @namespace scalejs.base
@@ -5,11 +7,7 @@
  */
 
 /*global define,console,navigator*/
-define([
-    'scalejs/scalejs.base.object'
-], function (
-    object
-) {
+define(['scalejs/scalejs.base.object'], function (object) {
     'use strict';
 
     // Workaround for IE8 and IE9 - in these browsers console.log exists but it's not a real JS function.
@@ -24,6 +22,7 @@ define([
      * @memberOf log
      * @private
      */
+
     var log = Function.prototype.call.bind(console['log'], console),
 
 
@@ -39,8 +38,7 @@ define([
      * @memberOf log
      * @private
      */
-        IE = navigator.userAgent.indexOf('MSIE') > 0 ||
-             navigator.userAgent.indexOf('Trident') > 0;
+    IE = navigator.userAgent.indexOf('MSIE') > 0 || navigator.userAgent.indexOf('Trident') > 0;
 
     /*jslint sub:false*/
 
@@ -52,18 +50,17 @@ define([
      * @memberOf log
      * @return {Function} decorated log function
      */
-    function create (level) {
-        return function() {
+    function create(level) {
+        return function () {
             var args, outstring;
 
             args = Array.prototype.slice.call(arguments, 0);
 
             if (!IE) {
                 args.unshift(level);
-
             } else {
                 outstring = level + ' ';
-                args.forEach(function(arg){
+                args.forEach(function (arg) {
                     outstring += object.stringify(arg) + ' ';
                 });
                 args = [outstring];
@@ -80,8 +77,8 @@ define([
      * @memberOf log
      * @return {String} formatted exception
      */
-    function formatException (ex) {
-        var stack   = (ex.stack) ? String(ex.stack) : '',
+    function formatException(ex) {
+        var stack = ex.stack ? String(ex.stack) : '',
             message = ex.message || '';
         return 'Error: ' + message + '\nStack: ' + stack;
     }
@@ -93,14 +90,14 @@ define([
          * @param {Any} [message...] items to print to the console
          * @memberOf log
          */
-        log:   create('      '),
+        log: create('      '),
         /**
          * Logs to the console with info level
          * @method info
          * @param {Any} [message...] items to print to the console
          * @memberOf log
          */
-        info:  create('info: '),
+        info: create('info: '),
         /**
          * Logs to the console with error level
          * @method error
@@ -114,7 +111,7 @@ define([
          * @param {Any} [message...] items to print to the console
          * @memberOf log
          */
-        warn:  create('warn: '),
+        warn: create('warn: '),
         /**
          * Logs to the console with debug level
          * @method debug
@@ -125,5 +122,4 @@ define([
         /** */
         formatException: formatException
     };
-
 });

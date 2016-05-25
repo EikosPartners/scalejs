@@ -1,11 +1,9 @@
 /*global define*/
 /*jslint unparam:true*/
-define([
-    'scalejs.core',
-    'scalejs.extensions'
-],function (core) {
+import core from 'scalejs.core';
+import 'scalejs.extensions';
     
-    'use strict';
+    
     
     // create a sandbox to shim existing requires
     // give ability to generate new sandbox if desired.
@@ -13,5 +11,4 @@ define([
         buildSandbox: core.buildSandbox
     }));
     
-    return sandbox;
-});
+    export default sandbox;

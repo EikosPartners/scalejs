@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Provides array functionality to scalejs base
  * @namespace scalejs.base
@@ -5,11 +7,7 @@
  */
 
 /*global define*/
-define([
-    'scalejs/scalejs.base.object'
-], function (
-    object
-) {
+define(['scalejs/scalejs.base.object'], function (object) {
     'use strict';
 
     var valueOrDefault = object.valueOrDefault;
@@ -77,7 +75,7 @@ define([
      */
     function find(array, f, context) {
         var i, // iterative variable
-            l; // array length variable
+        l; // array length variable
 
         for (i = 0, l = array.length; i < l; i += 1) {
             if (array.hasOwnProperty(i) && f.call(context, array[i], i, array)) {
@@ -102,12 +100,11 @@ define([
     }
 
     return {
-        addOne:     addOne,
-        removeOne:  removeOne,
-        removeAll:  removeAll,
-        copy:       copy,
-        find:       find,
-        toArray:    toArray
+        addOne: addOne,
+        removeOne: removeOne,
+        removeAll: removeAll,
+        copy: copy,
+        find: find,
+        toArray: toArray
     };
-
 });

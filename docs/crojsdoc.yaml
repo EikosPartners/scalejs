@@ -1,6 +1,0 @@
-output: .
-title: scalejs
-quite: false
-sources:
-    - ../src
-external-types: {"Any":"#"}

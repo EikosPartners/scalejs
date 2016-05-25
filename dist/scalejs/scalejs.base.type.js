@@ -1,3 +1,7 @@
+'use strict';
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
+
 /**
  * Provides type functionality to scalejs base
  * @namespace scalejs.base
@@ -15,6 +19,7 @@ define(function () {
      * @memberOf type
      * @return {String} type of the passed object
      */
+
     function typeOf(obj) {
         if (obj === undefined) {
             return 'undefined';
@@ -38,7 +43,6 @@ define(function () {
 
         return m[1];
     }
-
 
     /**
      * Determines if an object (and possibly a chain of properties within
@@ -107,21 +111,22 @@ define(function () {
         //                   'Comment' (Firefox,Chrome,Safari,Opera)
 
         // do not trust global undefined, which may be overridden
-        var undef       = void 0,
-            i,          // iterative variable
-            length      = arguments.length,
-            last        = length - 1,
+        var undef = void 0,
+            i,
+            // iterative variable
+        length = arguments.length,
+            last = length - 1,
             type,
             typeOfType,
             internalClass,
-            v           = value;
+            v = value;
 
         if (length === 0) {
             return false; // no argument
         }
 
         if (length === 1) {
-            return (value !== null && value !== undef);
+            return value !== null && value !== undef;
         }
 
         if (length > 2) {
@@ -135,23 +140,18 @@ define(function () {
 
         type = arguments[last];
         if (v === null) {
-            return (type === null || type === 'null');
+            return type === null || type === 'null';
         }
         if (v === undef) {
-            return (type === undef || type === 'undefined');
+            return type === undef || type === 'undefined';
         }
         if (type === '') {
             return v === type;
         }
 
-        typeOfType = typeof type;
+        typeOfType = typeof type === 'undefined' ? 'undefined' : _typeof(type);
         if (typeOfType === 'string') {
-            internalClass =
-                Object.prototype
-                    .toString
-                    .call(v)
-                    .slice(8, -1)
-                    .toLowerCase();
+            internalClass = Object.prototype.toString.call(v).slice(8, -1).toLowerCase();
             return internalClass === type;
         }
 
@@ -163,8 +163,7 @@ define(function () {
     }
 
     return {
-        is:      is,
-        typeOf:  typeOf
+        is: is,
+        typeOf: typeOf
     };
-
 });
