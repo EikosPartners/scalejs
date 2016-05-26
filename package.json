@@ -17,7 +17,7 @@
     "type": "git",
     "url": "https://github.com/EikosPartners/scalejs.git#es6"
   },
-  "main": "dist/scalejs.js",
+  "main": "dist/scalejs.core.js",
   "version": "0.4.0",
   "license": "MIT",
   "bugs": {
