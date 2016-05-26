@@ -25,6 +25,8 @@
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",
     "bower": "^1.3.9",
     "grunt": "~0.4.5",
@@ -41,6 +43,7 @@
     "jshint-stylish": "^0.4.0",
     "load-grunt-config": "^0.13.1",
     "rjs-build-analysis": "0.0.3",
-    "time-grunt": "^1.0.0"
+    "time-grunt": "^1.0.0",
+    "webpack": "^1.13.1"
   }
 }
