@@ -17,7 +17,7 @@
     "type": "git",
     "url": "https://github.com/EikosPartners/scalejs.git#es6"
   },
-  "main": "dist/scalejs.js",
+  "main": "dist/scalejs.core.js",
   "version": "0.4.0",
   "license": "MIT",
   "bugs": {
@@ -42,7 +42,6 @@
     "grunt-newer": "^0.7.0",
     "jshint-stylish": "^0.4.0",
     "load-grunt-config": "^0.13.1",
-    "rjs-build-analysis": "0.0.3",
     "time-grunt": "^1.0.0",
     "webpack": "^1.13.1"
   }
