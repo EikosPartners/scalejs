@@ -1,5 +1,9 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _scalejs = require("./scalejs.core");
 
 var _scalejs2 = _interopRequireDefault(_scalejs);
@@ -14,7 +18,7 @@ var _scalejs6 = _interopRequireDefault(_scalejs5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-module.exports = {
+exports.default = {
     core: _scalejs2.default,
     application: _scalejs4.default,
     sandbox: _scalejs6.default
