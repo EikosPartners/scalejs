@@ -3,7 +3,7 @@ import application from "./scalejs.application";
 import sandbox from "./scalejs.sandbox";
 
 
-module.exports = {
+export default {
     core: core,
     application: application,
     sandbox: sandbox
