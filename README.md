@@ -1,4 +1,4 @@
-scalejs 2.0
+Scalejs 2.0
 =======
 
 Scalable JavaScript Arcitecture - ES6
