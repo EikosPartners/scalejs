@@ -15,13 +15,13 @@
   "contributors": [],
   "repository": {
     "type": "git",
-    "url": "https://github.com/EikosPartners/scalejs.git#es6"
+    "url": "https://github.com/EikosPartners/scalejs.git"
   },
   "main": "dist/scalejs.js",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/EikosPartners/scalejs/issues#es6"
+    "url": "https://github.com/EikosPartners/scalejs/issues"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
