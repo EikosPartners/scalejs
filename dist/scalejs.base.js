@@ -33,3 +33,4 @@ exports.default = {
     array: _scalejsBase2.default,
     log: _scalejsBase4.default
 };
+//# sourceMappingURL=scalejs.base.js.map

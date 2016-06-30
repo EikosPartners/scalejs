@@ -151,3 +151,4 @@ exports.default = {
     run: run,
     exit: exit
 };
+//# sourceMappingURL=scalejs.application.js.map

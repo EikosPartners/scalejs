@@ -167,3 +167,4 @@ exports.default = {
     is: is,
     typeOf: typeOf
 };
+//# sourceMappingURL=scalejs.base.type.js.map

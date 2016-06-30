@@ -239,3 +239,4 @@ exports.default = {
     get: get,
     stringify: stringify
 };
+//# sourceMappingURL=scalejs.base.object.js.map

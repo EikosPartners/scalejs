@@ -128,3 +128,4 @@ exports.default = {
     /** */
     formatException: formatException
 };
+//# sourceMappingURL=scalejs.base.log.js.map

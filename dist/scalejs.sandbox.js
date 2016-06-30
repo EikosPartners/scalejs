@@ -21,3 +21,4 @@ var sandbox = _scalejs2.default.buildSandbox('main', _scalejs2.default.object.me
 }));
 
 exports.default = sandbox;
+//# sourceMappingURL=scalejs.sandbox.js.map
