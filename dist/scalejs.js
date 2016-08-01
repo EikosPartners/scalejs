@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.merge = exports.get = exports.valueOrDefault = exports.has = exports.typeOf = exports.is = undefined;
+exports.extend = exports.merge = exports.get = exports.valueOrDefault = exports.has = exports.typeOf = exports.is = undefined;
 
 var _scalejs = require('./scalejs.base');
 
@@ -19,10 +19,12 @@ var has = _base$object.has;
 var valueOrDefault = _base$object.valueOrDefault;
 var get = _base$object.get;
 var merge = _base$object.merge;
+var extend = _base$object.extend;
 exports.is = is;
 exports.typeOf = typeOf;
 exports.has = has;
 exports.valueOrDefault = valueOrDefault;
 exports.get = get;
 exports.merge = merge;
+exports.extend = extend;
 //# sourceMappingURL=scalejs.js.map
