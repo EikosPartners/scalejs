@@ -11,7 +11,7 @@
   <script src="style/metro.min.js"></script>
   <link rel="stylesheet" href="highlight.css" />
 
-  <meta name="generator" content="DocPad v6.60.4" />
+  <meta name="generator" content="DocPad v6.79.0" />
   
 
   <style>
@@ -253,15 +253,15 @@ Filtering uses a header row to allow you to type in a click filter or click the 
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">/*global define */</span>
 <span class="hljs-comment">/*jslint sloppy: true*/</span>
 define({
-    <span class="hljs-string">'main-grid'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+    <span class="hljs-string">'main-grid'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">return</span> {
-            slickGrid: {
-                columns: <span class="hljs-keyword">this</span>.columns,
-                itemsSource: <span class="hljs-keyword">this</span>.itemsSource,
-                enableColumnReorder: <span class="hljs-literal">false</span>,
-                forceFitColumns: <span class="hljs-literal">true</span>,
-                rowHeight: <span class="hljs-number">40</span>!!*,
-                showHeaderRow: <span class="hljs-literal">true</span>**!
+            <span class="hljs-attr">slickGrid</span>: {
+                <span class="hljs-attr">columns</span>: <span class="hljs-keyword">this</span>.columns,
+                <span class="hljs-attr">itemsSource</span>: <span class="hljs-keyword">this</span>.itemsSource,
+                <span class="hljs-attr">enableColumnReorder</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-attr">forceFitColumns</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-attr">rowHeight</span>: <span class="hljs-number">40</span>!!*,
+                <span class="hljs-attr">showHeaderRow</span>: <span class="hljs-literal">true</span>**!
             }
         };
     }
@@ -283,12 +283,12 @@ By default, it uses <code>StartsWith</code>, but you can specify <code>Contains<
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">/*global define */</span>
 define([
     <span class="hljs-string">'sandbox!main'</span>
-], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(
+], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">
     sandbox
-)</span> {</span>
-<span class="hljs-pi">    'use strict'</span>;
+</span>) </span>{
+<span class="hljs-meta">    'use strict'</span>;
 
-    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">var</span> <span class="hljs-comment">// imports</span>
             observableArray = sandbox.mvvm.observableArray,
             ajaxGet = sandbox.ajax.jsonpGet,
@@ -296,20 +296,20 @@ define([
             columns,
             itemsSource = observableArray();
 
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">moneyFormatter</span><span class="hljs-params">(m)</span> {</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">moneyFormatter</span>(<span class="hljs-params">m</span>) </span>{
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>(m).toFixed(<span class="hljs-number">2</span>);
         }
 
         columns = [
-            { id: <span class="hljs-string">"Symbol"</span>, field: <span class="hljs-string">"Symbol"</span>, name: <span class="hljs-string">"Symbol"</span>, minWidth: <span class="hljs-number">75</span>!!*, filter: { type: <span class="hljs-string">'string'</span> }**! },
-            { id: <span class="hljs-string">"Name"</span>, field: <span class="hljs-string">"Name"</span>, name: <span class="hljs-string">"Name"</span>, minWidth: <span class="hljs-number">300</span>!!*, filter: { type: <span class="hljs-string">'string'</span>, quickFilterOp: <span class="hljs-string">'Contains'</span> }**! },
-            { id: <span class="hljs-string">"LastSale"</span>, field: <span class="hljs-string">"LastSale"</span>, name: <span class="hljs-string">"Last Sale"</span>, cssClass: <span class="hljs-string">"money"</span>, minWidth: <span class="hljs-number">100</span>!!*, filter: { type: <span class="hljs-string">'number'</span> }**! },
-            { id: <span class="hljs-string">"MarketCap"</span>, field: <span class="hljs-string">"MarketCap"</span>, name: <span class="hljs-string">"Market Cap"</span>, cssClass: <span class="hljs-string">"money"</span>, minWidth: <span class="hljs-number">150</span>!!*, filter: { type: <span class="hljs-string">'mumber'</span> }**! },
-            { id: <span class="hljs-string">"Sector"</span>, field: <span class="hljs-string">"Sector"</span>, name: <span class="hljs-string">"Sector"</span>, minWidth: <span class="hljs-number">150</span>!!*, filter: { type: <span class="hljs-string">'string'</span> }**! },
-            { id: <span class="hljs-string">"Industry"</span>, field: <span class="hljs-string">"industry"</span>, name: <span class="hljs-string">"Industry"</span>, minWidth: <span class="hljs-number">350</span>!!*, filter: { type: <span class="hljs-string">'string'</span>, quickFilterOp: <span class="hljs-string">'Contains'</span> }**! }];
+            { <span class="hljs-attr">id</span>: <span class="hljs-string">"Symbol"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"Symbol"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Symbol"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">75</span>!!*, <span class="hljs-attr">filter</span>: { <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span> }**! },
+            { <span class="hljs-attr">id</span>: <span class="hljs-string">"Name"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"Name"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Name"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">300</span>!!*, <span class="hljs-attr">filter</span>: { <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>, <span class="hljs-attr">quickFilterOp</span>: <span class="hljs-string">'Contains'</span> }**! },
+            { <span class="hljs-attr">id</span>: <span class="hljs-string">"LastSale"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"LastSale"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Last Sale"</span>, <span class="hljs-attr">cssClass</span>: <span class="hljs-string">"money"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">100</span>!!*, <span class="hljs-attr">filter</span>: { <span class="hljs-attr">type</span>: <span class="hljs-string">'number'</span> }**! },
+            { <span class="hljs-attr">id</span>: <span class="hljs-string">"MarketCap"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"MarketCap"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Market Cap"</span>, <span class="hljs-attr">cssClass</span>: <span class="hljs-string">"money"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">150</span>!!*, <span class="hljs-attr">filter</span>: { <span class="hljs-attr">type</span>: <span class="hljs-string">'mumber'</span> }**! },
+            { <span class="hljs-attr">id</span>: <span class="hljs-string">"Sector"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"Sector"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Sector"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">150</span>!!*, <span class="hljs-attr">filter</span>: { <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span> }**! },
+            { <span class="hljs-attr">id</span>: <span class="hljs-string">"Industry"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"industry"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Industry"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">350</span>!!*, <span class="hljs-attr">filter</span>: { <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>, <span class="hljs-attr">quickFilterOp</span>: <span class="hljs-string">'Contains'</span> }**! }];
 
-        ajaxGet(<span class="hljs-string">'./companylist.txt'</span>, {}).subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(data)</span> {</span>
-            itemsSource(<span class="hljs-built_in">JSON</span>.parse(data).map(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(company)</span> {</span>
+        ajaxGet(<span class="hljs-string">'./companylist.txt'</span>, {}).subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+            itemsSource(<span class="hljs-built_in">JSON</span>.parse(data).map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">company</span>) </span>{
                 <span class="hljs-comment">// money formatter</span>
                 company.LastSale = moneyFormatter(company.LastSale);
                 company.MarketCap = moneyFormatter(company.MarketCap);
@@ -318,8 +318,8 @@ define([
         });
 
         <span class="hljs-keyword">return</span> {
-            columns: columns,
-            itemsSource: itemsSource
+            <span class="hljs-attr">columns</span>: columns,
+            <span class="hljs-attr">itemsSource</span>: itemsSource
         };
     };
 });
@@ -341,12 +341,12 @@ you must specify observables for the filter to use.
 ViewModel filters also need a <code>type</code> propery which can be <code>string</code> or <code>number</code>, and optionally, it can be passed a <code>quickFilterOp</code>.</p>
 <h5 id="example-the-observables-that-need-to-be-defined-on-the-filter-for-the-column">Example: the observables that need to be defined on the filter for the column</h5>
 <pre class="highlight"><code class="hljs javascript">{ 
-    id: <span class="hljs-string">"Symbol"</span>, 
-    field: <span class="hljs-string">"Symbol"</span>, 
-    name: <span class="hljs-string">"Symbol"</span>, 
-    minWidth: <span class="hljs-number">75</span>, 
-    filter: {
-        type: <span class="hljs-string">'string'</span>,
+    <span class="hljs-attr">id</span>: <span class="hljs-string">"Symbol"</span>, 
+    <span class="hljs-attr">field</span>: <span class="hljs-string">"Symbol"</span>, 
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"Symbol"</span>, 
+    <span class="hljs-attr">minWidth</span>: <span class="hljs-number">75</span>, 
+    <span class="hljs-attr">filter</span>: {
+        <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>,
         !!*value: observable(), <span class="hljs-comment">// contains the value of the filter</span>
         quickSearch: observable(), <span class="hljs-comment">// contains the value of the quickSearch</span>
         values: observableArray() <span class="hljs-comment">// displays the result of the quickSearch**!</span>
@@ -360,23 +360,23 @@ Since we do not have a backend service to do the filtering for us, we will do th
 or contains 1 of more of objects with the following format</p>
 <h5 id="example-what-to-expect-from-values-and-quicksearch">Example: what to expect from values and quickSearch</h5>
 <pre class="highlight"><code class="hljs javascript">{
-    op: <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">string</span> <span class="hljs-attribute">with</span> `<span class="hljs-attribute">StartsWith</span>`, `<span class="hljs-attribute">Contains</span>`, `<span class="hljs-attribute">EndsWith</span>`, <span class="hljs-attribute">etc</span>&gt;</span>
-    values: [<span class="hljs-tag">&lt;<span class="hljs-title">an</span> <span class="hljs-attribute">array</span> <span class="hljs-attribute">with</span> <span class="hljs-attribute">the</span> <span class="hljs-attribute">values</span> <span class="hljs-attribute">of</span> <span class="hljs-attribute">the</span> <span class="hljs-attribute">operation</span>&gt;</span>]
+    <span class="hljs-attr">op</span>: &lt;a string with `StartsWith`, `Contains`, `EndsWith`, etc&gt;
+    values: [&lt;an array with the values of the operation&gt;]
 }
-</span></code></pre>
+</code></pre>
 <p>When implementing filtering, make sure to be careful about types and case.</p>
 <h5 id="example-the-viewmodel-for-itemssource-and-columns-mainviewmodel-js-https-github-com-lisovin-scalejs-examples-blob-grid-2b-grid-app-main-viewmodels-mainviewmodel-js-">Example: the viewmodel for itemsSource and columns (<a href="https://github.com/lisovin/scalejs-examples/blob/grid-2b/Grid/app/main/viewmodels/mainViewModel.js">mainViewModel.js</a>)</h5>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">/*global define */</span>
 define([
     <span class="hljs-string">'sandbox!main'</span>,!!*
     <span class="hljs-string">'./filtering'</span>**!
-], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(
+], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">
     sandbox!!*,
     setupFilter**!
-)</span> {</span>
-<span class="hljs-pi">    'use strict'</span>;
+</span>) </span>{
+<span class="hljs-meta">    'use strict'</span>;
 
-    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">var</span> <span class="hljs-comment">// imports</span>
             observableArray = sandbox.mvvm.observableArray,
             ajaxGet = sandbox.ajax.jsonpGet,!!*
@@ -385,29 +385,29 @@ define([
             columns,
             itemsSource = observableArray();
 
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">moneyFormatter</span><span class="hljs-params">(m)</span> {</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">moneyFormatter</span>(<span class="hljs-params">m</span>) </span>{
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>(m).toFixed(<span class="hljs-number">2</span>);
         }
 
         columns = [
             {
-                id: <span class="hljs-string">"Symbol"</span>, field: <span class="hljs-string">"Symbol"</span>, name: <span class="hljs-string">"Symbol"</span>, minWidth: <span class="hljs-number">75</span>,
+                <span class="hljs-attr">id</span>: <span class="hljs-string">"Symbol"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"Symbol"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Symbol"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">75</span>,
                 !!*filter: {
-                    type: <span class="hljs-string">'string'</span>,
-                    value: observable(), <span class="hljs-comment">// contains the value of the filter</span>
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>,
+                    <span class="hljs-attr">value</span>: observable(), <span class="hljs-comment">// contains the value of the filter</span>
                     quickSearch: observable(), <span class="hljs-comment">// contains the value of the quickSearch</span>
                     values: observableArray() <span class="hljs-comment">// displays the result of the quickSearch</span>
                 }**!
             },
-            { id: <span class="hljs-string">"Name"</span>, field: <span class="hljs-string">"Name"</span>, name: <span class="hljs-string">"Name"</span>, minWidth: <span class="hljs-number">300</span> },
-            { id: <span class="hljs-string">"LastSale"</span>, field: <span class="hljs-string">"LastSale"</span>, name: <span class="hljs-string">"Last Sale"</span>, cssClass: <span class="hljs-string">"money"</span>, minWidth: <span class="hljs-number">100</span> },
-            { id: <span class="hljs-string">"MarketCap"</span>, field: <span class="hljs-string">"MarketCap"</span>, name: <span class="hljs-string">"Market Cap"</span>, cssClass: <span class="hljs-string">"money"</span>, minWidth: <span class="hljs-number">150</span> },
-            { id: <span class="hljs-string">"Sector"</span>, field: <span class="hljs-string">"Sector"</span>, name: <span class="hljs-string">"Sector"</span>, minWidth: <span class="hljs-number">150</span> },
-            { id: <span class="hljs-string">"Industry"</span>, field: <span class="hljs-string">"industry"</span>, name: <span class="hljs-string">"Industry"</span>, minWidth: <span class="hljs-number">350</span> }];
+            { <span class="hljs-attr">id</span>: <span class="hljs-string">"Name"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"Name"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Name"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">300</span> },
+            { <span class="hljs-attr">id</span>: <span class="hljs-string">"LastSale"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"LastSale"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Last Sale"</span>, <span class="hljs-attr">cssClass</span>: <span class="hljs-string">"money"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">100</span> },
+            { <span class="hljs-attr">id</span>: <span class="hljs-string">"MarketCap"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"MarketCap"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Market Cap"</span>, <span class="hljs-attr">cssClass</span>: <span class="hljs-string">"money"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">150</span> },
+            { <span class="hljs-attr">id</span>: <span class="hljs-string">"Sector"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"Sector"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Sector"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">150</span> },
+            { <span class="hljs-attr">id</span>: <span class="hljs-string">"Industry"</span>, <span class="hljs-attr">field</span>: <span class="hljs-string">"industry"</span>, <span class="hljs-attr">name</span>: <span class="hljs-string">"Industry"</span>, <span class="hljs-attr">minWidth</span>: <span class="hljs-number">350</span> }];
 
-        ajaxGet(<span class="hljs-string">'./companylist.txt'</span>, {}).subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(data)</span> {</span>
+        ajaxGet(<span class="hljs-string">'./companylist.txt'</span>, {}).subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
             !!*<span class="hljs-comment">// maintain original companies for filtering</span>
-            <span class="hljs-keyword">var</span> companies = <span class="hljs-built_in">JSON</span>.parse(data).map(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(company)</span> {</span>**!
+            <span class="hljs-keyword">var</span> companies = <span class="hljs-built_in">JSON</span>.parse(data).map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">company</span>) </span>{**!
                 <span class="hljs-comment">// money formatter</span>
                 company.LastSale = moneyFormatter(company.LastSale);
                 company.MarketCap = moneyFormatter(company.MarketCap);
@@ -421,8 +421,8 @@ define([
         });
 
         <span class="hljs-keyword">return</span> {
-            columns: columns,
-            itemsSource: itemsSource
+            <span class="hljs-attr">columns</span>: columns,
+            <span class="hljs-attr">itemsSource</span>: itemsSource
         };
     };
 });
@@ -434,40 +434,40 @@ define([
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">/*global define */</span>
 define([
     <span class="hljs-string">'sandbox!main'</span>
-], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(
+], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">
     sandbox
-)</span> {</span>
-<span class="hljs-pi">    'use strict'</span>;
+</span>) </span>{
+<span class="hljs-meta">    'use strict'</span>;
 
-    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(column, originalItems, itemsSource)</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">column, originalItems, itemsSource</span>) </span>{
         <span class="hljs-keyword">var</span> colFilter = column.filter,
             <span class="hljs-comment">// comparison functions needed for string filter</span>
             <span class="hljs-comment">// s is the 'source' items and v are the 'values' in the expression</span>
             comparisons = {
-                In: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(s, v)</span> {</span> <span class="hljs-keyword">return</span> v.some(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(x)</span> {</span> <span class="hljs-keyword">return</span> s.match(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">'^'</span> + x + <span class="hljs-string">'</span>, <span class="hljs-string">'i'</span>)); }); },
-                Contains: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(s, v)</span> {</span> <span class="hljs-keyword">return</span> s.match(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(v[<span class="hljs-number">0</span>], <span class="hljs-string">'i'</span>)); },
-                StartsWith: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(s, v)</span> {</span> <span class="hljs-keyword">return</span> s.match(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">'^'</span> + v[<span class="hljs-number">0</span>], <span class="hljs-string">'i'</span>)); },
-                EndsWith: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(s, v)</span> {</span> <span class="hljs-keyword">return</span> s.match(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(v[<span class="hljs-number">0</span>] + <span class="hljs-string">'</span>, <span class="hljs-string">'i'</span>)); },
-                NotEmpty: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(s)</span> {</span> <span class="hljs-keyword">return</span> s !== <span class="hljs-string">""</span> }
+                <span class="hljs-attr">In</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">s, v</span>) </span>{ <span class="hljs-keyword">return</span> v.some(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">x</span>) </span>{ <span class="hljs-keyword">return</span> s.match(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">'^'</span> + x + <span class="hljs-string">'</span>, <span class="hljs-string">'i'</span>)); }); },
+                <span class="hljs-attr">Contains</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">s, v</span>) </span>{ <span class="hljs-keyword">return</span> s.match(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(v[<span class="hljs-number">0</span>], <span class="hljs-string">'i'</span>)); },
+                <span class="hljs-attr">StartsWith</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">s, v</span>) </span>{ <span class="hljs-keyword">return</span> s.match(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(<span class="hljs-string">'^'</span> + v[<span class="hljs-number">0</span>], <span class="hljs-string">'i'</span>)); },
+                <span class="hljs-attr">EndsWith</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">s, v</span>) </span>{ <span class="hljs-keyword">return</span> s.match(<span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(v[<span class="hljs-number">0</span>] + <span class="hljs-string">'</span>, <span class="hljs-string">'i'</span>)); },
+                <span class="hljs-attr">NotEmpty</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">s</span>) </span>{ <span class="hljs-keyword">return</span> s !== <span class="hljs-string">""</span> }
             };
 
         <span class="hljs-comment">// filterExpression contains the operation (e.g. 'StartsWith') and values</span>
         <span class="hljs-comment">// returns a function which can be used to filter items</span>
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">evaluate</span><span class="hljs-params">(filterExpression)</span> {</span>
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">evaluate</span>(<span class="hljs-params">filterExpression</span>) </span>{
             <span class="hljs-keyword">var</span> evaluateOperation = comparisons[filterExpression.op];
 
-            <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(item)</span> {</span>
+            <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>) </span>{
                 <span class="hljs-keyword">return</span> evaluateOperation(item[column.field], filterExpression.values);
             }
         }
 
         <span class="hljs-comment">// value is the filter expression(s) defined by user</span>
         <span class="hljs-comment">// subscribe to value to respond to user input</span>
-        colFilter.value.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(expressions)</span> {</span>
+        colFilter.value.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">expressions</span>) </span>{
             <span class="hljs-keyword">var</span> filteredItems;
 
             <span class="hljs-comment">// iterate through all expressions, filtering the items each item</span>
-            filteredItems = expressions.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(items, filterExpression)</span> {</span>
+            filteredItems = expressions.reduce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">items, filterExpression</span>) </span>{
                 <span class="hljs-keyword">return</span> items.filter(evaluate(filterExpression));
             }, originalItems);
 
@@ -476,10 +476,10 @@ define([
         });
 
         <span class="hljs-comment">// need to also set the list items by subscribing to quickSearch</span>
-        colFilter.quickSearch.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(quickSearchExpression)</span> {</span>
+        colFilter.quickSearch.subscribe(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">quickSearchExpression</span>) </span>{
             <span class="hljs-keyword">var</span> listItems = originalItems
                 .filter(evaluate(quickSearchExpression))
-                .map(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(c)</span> {</span> <span class="hljs-keyword">return</span> c[column.field] }); <span class="hljs-comment">// only need the values in the column</span>
+                .map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">c</span>) </span>{ <span class="hljs-keyword">return</span> c[column.field] }); <span class="hljs-comment">// only need the values in the column</span>
 
             <span class="hljs-comment">// update the list values (filter.values observableArray) with the new list items</span>
             <span class="hljs-comment">// take 50 for optimization</span>

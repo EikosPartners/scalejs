@@ -11,7 +11,7 @@
   <script src="style/metro.min.js"></script>
   <link rel="stylesheet" href="highlight.css" />
 
-  <meta name="generator" content="DocPad v6.60.4" />
+  <meta name="generator" content="DocPad v6.79.0" />
   <link  rel="stylesheet" href="highlight.css" />
 
   <style>
@@ -221,24 +221,24 @@
 <h2 id="examples">Examples</h2>
 <h3 id="simple-binding">Simple Binding</h3>
 <pre class="highlight"><code class="hljs javascript">autocomplete: {
-    itemsSource: [<span class="hljs-string">'Nick'</span>, <span class="hljs-string">'Conor'</span>, <span class="hljs-string">'Nissim'</span>, <span class="hljs-string">'Dan'</span>, <span class="hljs-string">'Serge'</span>, <span class="hljs-string">'Dave'</span>,  <span class="hljs-string">'Jeremy'</span>, <span class="hljs-string">'Peter'</span>, <span class="hljs-string">'Ernie'</span>, <span class="hljs-string">'Bruce'</span>, <span class="hljs-string">'Vlad'</span>, <span class="hljs-string">'Mike'</span>],
-    selectedItem: <span class="hljs-keyword">this</span>.selectedItem,
+    <span class="hljs-attr">itemsSource</span>: [<span class="hljs-string">'Nick'</span>, <span class="hljs-string">'Conor'</span>, <span class="hljs-string">'Nissim'</span>, <span class="hljs-string">'Dan'</span>, <span class="hljs-string">'Serge'</span>, <span class="hljs-string">'Dave'</span>,  <span class="hljs-string">'Jeremy'</span>, <span class="hljs-string">'Peter'</span>, <span class="hljs-string">'Ernie'</span>, <span class="hljs-string">'Bruce'</span>, <span class="hljs-string">'Vlad'</span>, <span class="hljs-string">'Mike'</span>],
+    <span class="hljs-attr">selectedItem</span>: <span class="hljs-keyword">this</span>.selectedItem,
 }
 </code></pre>
 <h3 id="complex-binding">Complex Binding</h3>
 <pre class="highlight"><code class="hljs javascript">autocomplete: {
-    select2: {
-        placeholder: <span class="hljs-string">'Placeholder Text'</span>,
-        allowClear: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">select2</span>: {
+        <span class="hljs-attr">placeholder</span>: <span class="hljs-string">'Placeholder Text'</span>,
+        <span class="hljs-attr">allowClear</span>: <span class="hljs-literal">true</span>,
     },
-    itemsSource: <span class="hljs-keyword">this</span>.data, <span class="hljs-comment">//Observable from viewmodel containing data to show</span>
+    <span class="hljs-attr">itemsSource</span>: <span class="hljs-keyword">this</span>.data, <span class="hljs-comment">//Observable from viewmodel containing data to show</span>
     selectedItem: <span class="hljs-keyword">this</span>.selectedItem, <span class="hljs-comment">//Observable from viewmodel that gets populated with selected item</span>
     queryText: <span class="hljs-keyword">this</span>.userInput, <span class="hljs-comment">//Observable from viewmodel that gets populated with what the user types</span>
     textPath: <span class="hljs-string">'name'</span>,
-    idPath: <span class="hljs-string">'name'</span>,
-    childPath: <span class="hljs-string">'children'</span>,
-    selectGroupNodes: <span class="hljs-literal">false</span>,
-    itemTemplate: <span class="hljs-string">"autocomplete_item_template"</span>
+    <span class="hljs-attr">idPath</span>: <span class="hljs-string">'name'</span>,
+    <span class="hljs-attr">childPath</span>: <span class="hljs-string">'children'</span>,
+    <span class="hljs-attr">selectGroupNodes</span>: <span class="hljs-literal">false</span>,
+    <span class="hljs-attr">itemTemplate</span>: <span class="hljs-string">"autocomplete_item_template"</span>
 }
 </code></pre>
 <h2 id="features">Features</h2>

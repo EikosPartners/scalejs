@@ -11,7 +11,7 @@
   <script src="style/metro.min.js"></script>
   <link rel="stylesheet" href="highlight.css" />
 
-  <meta name="generator" content="DocPad v6.60.4" />
+  <meta name="generator" content="DocPad v6.79.0" />
   <link  rel="stylesheet" href="highlight.css" />
 
   <style>
@@ -219,45 +219,45 @@
 <h2 id="examples">Examples</h2>
 <h3 id="simple-binding">Simple Binding</h3>
 <pre class="highlight"><code class="hljs javascript">sunburst: {
-    data: <span class="hljs-keyword">this</span>.flareJS,
-    idPath: <span class="hljs-string">'name'</span>,
-    colorPath: <span class="hljs-string">"shade"</span>,
-    colorPalette: <span class="hljs-string">'PuBu'</span>,
-    enableZoom: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">data</span>: <span class="hljs-keyword">this</span>.flareJS,
+    <span class="hljs-attr">idPath</span>: <span class="hljs-string">'name'</span>,
+    <span class="hljs-attr">colorPath</span>: <span class="hljs-string">"shade"</span>,
+    <span class="hljs-attr">colorPalette</span>: <span class="hljs-string">'PuBu'</span>,
+    <span class="hljs-attr">enableZoom</span>: <span class="hljs-literal">true</span>,
 }
 </code></pre>
 <h3 id="complex-binding">Complex Binding</h3>
 <h4 id="binding">Binding</h4>
 <pre class="highlight"><code class="hljs javascript">visualizations: {
-    type: <span class="hljs-keyword">this</span>.type, <span class="hljs-comment">// Observable from viewmodel containing the type of visualization</span>
+    <span class="hljs-attr">type</span>: <span class="hljs-keyword">this</span>.type, <span class="hljs-comment">// Observable from viewmodel containing the type of visualization</span>
     data: <span class="hljs-keyword">this</span>.flareJS, <span class="hljs-comment">// Observable from viewmodel containing data</span>
     maxVisibleLevels: <span class="hljs-keyword">this</span>.maxVisibleLevels,
-    levels: [{
-        colorPalette: [<span class="hljs-string">"#88ff88"</span>, <span class="hljs-string">"#00ff00"</span>, <span class="hljs-string">"#008800"</span>]
+    <span class="hljs-attr">levels</span>: [{
+        <span class="hljs-attr">colorPalette</span>: [<span class="hljs-string">"#88ff88"</span>, <span class="hljs-string">"#00ff00"</span>, <span class="hljs-string">"#008800"</span>]
     }, {
-        colorPalette: [<span class="hljs-string">"#ff8888"</span>, <span class="hljs-string">"#ff0000"</span>, <span class="hljs-string">"#880000"</span>]
+        <span class="hljs-attr">colorPalette</span>: [<span class="hljs-string">"#ff8888"</span>, <span class="hljs-string">"#ff0000"</span>, <span class="hljs-string">"#880000"</span>]
     }, <span class="hljs-string">'children'</span>, {
-        childrenPath: <span class="hljs-string">'children'</span>,
-        colorPalette: <span class="hljs-string">'PuBu'</span>
+        <span class="hljs-attr">childrenPath</span>: <span class="hljs-string">'children'</span>,
+        <span class="hljs-attr">colorPalette</span>: <span class="hljs-string">'PuBu'</span>
     }, {
-        colorPalette: <span class="hljs-string">'PRGn'</span>
+        <span class="hljs-attr">colorPalette</span>: <span class="hljs-string">'PRGn'</span>
     }, {
-        colorPalette: [<span class="hljs-string">"#d7191c"</span>, <span class="hljs-string">"#fdae61"</span>, <span class="hljs-string">"#ffffbf"</span>, <span class="hljs-string">"#a6d96a"</span>, <span class="hljs-string">"#1a9641"</span>]
+        <span class="hljs-attr">colorPalette</span>: [<span class="hljs-string">"#d7191c"</span>, <span class="hljs-string">"#fdae61"</span>, <span class="hljs-string">"#ffffbf"</span>, <span class="hljs-string">"#a6d96a"</span>, <span class="hljs-string">"#1a9641"</span>]
     }],
-    idPath: <span class="hljs-string">'id'</span>,
-    childrenPath: <span class="hljs-string">'children'</span>,
-    areaPath: <span class="hljs-keyword">this</span>.areaPath, <span class="hljs-comment">// Observable from viewmodel containing the path to an area property</span>
+    <span class="hljs-attr">idPath</span>: <span class="hljs-string">'id'</span>,
+    <span class="hljs-attr">childrenPath</span>: <span class="hljs-string">'children'</span>,
+    <span class="hljs-attr">areaPath</span>: <span class="hljs-keyword">this</span>.areaPath, <span class="hljs-comment">// Observable from viewmodel containing the path to an area property</span>
     colorPath: <span class="hljs-keyword">this</span>.colorPath, <span class="hljs-comment">// Observable from viewmodel containing the path to an color property</span>
     colorPalette: <span class="hljs-keyword">this</span>.colorPalette, <span class="hljs-comment">// Observable from viewmodel containing the color palette to pass to d3</span>
     zoomedItemPath: <span class="hljs-keyword">this</span>.zoomedItemPath,  <span class="hljs-comment">// Observable from viewmodel containing the path set on zoom</span>
     heldItemPath: <span class="hljs-keyword">this</span>.heldItemPath, <span class="hljs-comment">// Observable from viewmodel containing the path set on hold</span>
     selectedItemPath: <span class="hljs-keyword">this</span>.selectedItemPath, <span class="hljs-comment">// Observable from viewmodel containing the path set on selecting</span>
     enableZoom: <span class="hljs-literal">true</span>,
-    enableTouch: <span class="hljs-literal">true</span>,
-    sortBy: <span class="hljs-keyword">this</span>.sortMethod,
-    fr: <span class="hljs-number">5</span>,
-    parentFr: <span class="hljs-number">1</span> / <span class="hljs-number">2</span>,
-    levelsFr: [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>]
+    <span class="hljs-attr">enableTouch</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">sortBy</span>: <span class="hljs-keyword">this</span>.sortMethod,
+    <span class="hljs-attr">fr</span>: <span class="hljs-number">5</span>,
+    <span class="hljs-attr">parentFr</span>: <span class="hljs-number">1</span> / <span class="hljs-number">2</span>,
+    <span class="hljs-attr">levelsFr</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>]
 }
 </code></pre>
 <h4 id="viewmodel">Viewmodel</h4>
@@ -265,11 +265,11 @@
 define([
     <span class="hljs-string">'sandbox!sundemo'</span>,
     <span class="hljs-string">'../data/flare'</span>
-], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(
+], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">
     sandbox,
     flare
-)</span> {</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">var</span> type = observable(<span class="hljs-string">'sunburst'</span>),
             data = observable(flare),
             areaPath = observable(<span class="hljs-string">'size'</span>),
@@ -282,16 +282,16 @@ define([
             zoomedItemPath = observable([]);
 
         <span class="hljs-keyword">return</span> {
-            type: type,
-            data: data,
-            areaPath: areaPath,
-            colorPath: colorPath,
-            colorPalette: colorPalette,
-            maxVisibleLevels: maxVisibleLevels,
-            heldItemPath: heldItemPath,
-            selectedItemPath: selectedItemPath,
-            zoomedItemPath: zoomedItemPath,
-            sortMethod: sortMethod
+            <span class="hljs-attr">type</span>: type,
+            <span class="hljs-attr">data</span>: data,
+            <span class="hljs-attr">areaPath</span>: areaPath,
+            <span class="hljs-attr">colorPath</span>: colorPath,
+            <span class="hljs-attr">colorPalette</span>: colorPalette,
+            <span class="hljs-attr">maxVisibleLevels</span>: maxVisibleLevels,
+            <span class="hljs-attr">heldItemPath</span>: heldItemPath,
+            <span class="hljs-attr">selectedItemPath</span>: selectedItemPath,
+            <span class="hljs-attr">zoomedItemPath</span>: zoomedItemPath,
+            <span class="hljs-attr">sortMethod</span>: sortMethod
         };
     };
 });

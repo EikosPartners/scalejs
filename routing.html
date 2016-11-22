@@ -11,7 +11,7 @@
   <script src="style/metro.min.js"></script>
   <link rel="stylesheet" href="highlight.css" />
 
-  <meta name="generator" content="DocPad v6.60.4" />
+  <meta name="generator" content="DocPad v6.79.0" />
   
 
   <style>
@@ -234,7 +234,7 @@ In this situation, the second parameter of the <code>routerState</code> function
 <h5 id="example-specifying-a-baseurl-for-your-app-">Example: Specifying a baseUrl for your app.</h5>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> routerState = sandbox.routing.routerState;
 
-registerStates(<span class="hljs-string">'root'</span>, routerState(<span class="hljs-string">'app'</span>, { baseUrl: <span class="hljs-string">'store'</span> }));
+registerStates(<span class="hljs-string">'root'</span>, routerState(<span class="hljs-string">'app'</span>, { <span class="hljs-attr">baseUrl</span>: <span class="hljs-string">'store'</span> }));
 </code></pre>
 <p><br></p>
 <h2 id="route">route</h2>
@@ -281,8 +281,8 @@ registerStates(<span class="hljs-string">'root'</span>, routerState(<span class=
     state(<span class="hljs-string">'a'</span>, route(<span class="hljs-string">'/'</span>)),
     state(<span class="hljs-string">'b'</span>, 
         route(<span class="hljs-string">'b/{id}'</span>),
-        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-            console.log(e.data.id);
+        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(e.data.id);
         }))));
 </code></pre>
 <p>If internally you are navigating to this state, you must pass the value when you call <code>raise()</code> or else the <code>id</code> in your URL will be undefined.</p>
@@ -296,11 +296,11 @@ registerStates(<span class="hljs-string">'root'</span>, routerState(<span class=
         on(<span class="hljs-string">'b.open'</span>, goto(<span class="hljs-string">'b'</span>))),
     state(<span class="hljs-string">'b'</span>, 
         route(<span class="hljs-string">'b/{id}'</span>),
-        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-            console.log(e.data.id);
+        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(e.data.id);
         }))));
 
-raise(<span class="hljs-string">'b.open'</span>, { id: <span class="hljs-number">1</span> });
+raise(<span class="hljs-string">'b.open'</span>, { <span class="hljs-attr">id</span>: <span class="hljs-number">1</span> });
 </code></pre>
 <p>If you use the URL <a href="http://yourapp.com/?b/1">http://yourapp.com/?b/1</a> to navigate to your app, the event data will automatically contain the id.</p>
 <p>Dynamic routes can go as many levels deep as you need. For example, if you would like to pass additional data
@@ -313,9 +313,9 @@ registerStates(<span class="hljs-string">'root'</span>, routerState(<span class=
     state(<span class="hljs-string">'a'</span>, route(<span class="hljs-string">'/'</span>)),
     state(<span class="hljs-string">'b'</span>, 
         route(<span class="hljs-string">'b/{x}/{y}'</span>),
-        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-            console.log(e.data.x); <span class="hljs-comment">//1</span>
-            console.log(e.data.y); <span class="hljs-comment">//2 </span>
+        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(e.data.x); <span class="hljs-comment">//1</span>
+            <span class="hljs-built_in">console</span>.log(e.data.y); <span class="hljs-comment">//2 </span>
         }))));
 </code></pre>
 <p><br></p>
@@ -330,8 +330,8 @@ registerStates(<span class="hljs-string">'root'</span>, routerState(<span class=
     state(<span class="hljs-string">'a'</span>, route(<span class="hljs-string">'/'</span>)),
     state(<span class="hljs-string">'b'</span>, 
         route(<span class="hljs-string">'b?x={x}'</span>),
-        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-            console.log(e.data.x);
+        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(e.data.x);
         }))));
 </code></pre>
 <p>Like the dynamic route path, you can specify as many parameters as you would like.</p>
@@ -343,9 +343,9 @@ registerStates(<span class="hljs-string">'root'</span>, routerState(<span class=
     state(<span class="hljs-string">'a'</span>, route(<span class="hljs-string">'/'</span>)),
     state(<span class="hljs-string">'b'</span>, 
         route(<span class="hljs-string">'b?x={x}&amp;y={y}'</span>),
-        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-            console.log(e.data.x);
-            console.log(e.data.y);
+        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(e.data.x);
+            <span class="hljs-built_in">console</span>.log(e.data.y);
         }))));
 </code></pre>
 <p>You can also combine dynamic paths and parameters to create complex URLs</p>
@@ -357,9 +357,9 @@ registerStates(<span class="hljs-string">'root'</span>, routerState(<span class=
     state(<span class="hljs-string">'a'</span>, route(<span class="hljs-string">'/'</span>)),
     state(<span class="hljs-string">'b'</span>, 
         route(<span class="hljs-string">'b/{x}?y={y}'</span>),
-        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(e)</span> {</span>
-            console.log(e.data.x);
-            console.log(e.data.y);
+        onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(e.data.x);
+            <span class="hljs-built_in">console</span>.log(e.data.y);
         }))));
 </code></pre>
 <p>Dynamic routes and parameterized routes both have their own use cases. 

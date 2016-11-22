@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="style/metro-bootstrap.min.css" />
+  <link rel="stylesheet" href="style/metro-bootstrap-responsive.min.css" />
+  <script src="style/jquery.min.js"></script>
+  <script src="style/jquery.ui.widget.js"></script>
+  <script src="style/metro.min.js"></script>
+  <link rel="stylesheet" href="highlight.css" />
+
+  <meta name="generator" content="DocPad v6.79.0" />
+  
+
+  <style>
+    header {
+      height: 45px;
+  }
+  #content {
+      overflow-y: scroll;
+      padding-right: 20px;
+      margin-left: 20px;
+  }
+  #sidebar {
+      display: block;
+      float: left;
+      width: 300px;
+      overflow-y: scroll;
+      margin-right:20px;
+  }
+  body {
+      overflow-y: hidden;
+  }
+  .metro h1 {
+    color: #9a1616 !important;
+}
+.metro .sidebar>ul ul, .metro .sidebar>ul ul li a {
+    background-color: #3d3d3d;
+    border: 0px;
+    color: #fff;
+}
+
+.metro h2, .metro h3 {
+    margin: 30px 0 15px 0;
+}
+</style>
+
+<script>
+    function adjustHeight() {
+        //adjust the height of the content and sidebar
+        $("#content").outerHeight(window.innerHeight -45);
+        $("#sidebar").outerHeight(window.innerHeight -45);
+    }
+
+    $(document).ready(function() {
+        var path = window.location.pathname.replace("/scalejs/scalejs-docs/out","");
+
+        //make selected page active on sidebar
+        $("a[href='." + path +"']").parent().addClass("active");
+
+        adjustHeight();
+        $(window).resize(adjustHeight);
+
+        //create code highlighting
+        $('pre').each(function() {
+            $(this).html($(this).html().replace(/!!\*/g, "<i style='background-color:#FFFF99'>").replace(/\*\*!/g, "</i>"));
+        });
+
+        console.log(path);
+        //expand grid if it is grid
+        if(path === '/grid1.html' || path === '/grid2.html' || path=='/grid3.html') $('#grid-dropdown').css("display","block");
+    });
+
+</script>
+</head>
+<body class="metro">
+
+    <header>
+        <nav class="navigation-bar dark fixed-top">
+    <div class="navigation-bar-content">
+        <a href="./" class="element"><span class="icon-home"></span> SCALEJS</a>
+        <span class="element-divider"></span>
+
+        <a class="element1 pull-menu" href="#"></a>
+
+        <ul class="element-menu no-desktop">
+            <li>
+                <a class="dropdown-toggle" href="#"><span class="icon-layers"></span> Docs</a>
+                <ul class="dropdown-menu dark" data-role="dropdown">
+                    <li>
+                        <a href="#" class="dropdown-toggle">Getting Started</a>
+                        <ul class="dropdown-menu dark" data-role="dropdown">
+                            <li><a href="./docs.html"><i class="icon-star-3"></i> Introduction</a></li>
+                            <li><a href="./install.html"><i class="icon-download-2"></i> Install Scalejs</a></li>
+                            <li><a href="./project.html"><i class="icon-new"></i> Create an Application Project</a></li>
+                            <li><a href="./running.html"><i class="icon-play"></i> Running your  Application</a></li>
+                            <!--<li><a href="./build.html"><i class="icon-cloud"></i> Build and Deployment</a></li>
+                            <li><a href="./test.html"><i class="icon-checkmark"></i> Testing</a></li>
+                            <li><a href="./best.html"><i class="icon-thumbs-up"></i> Best Practices</a></li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">Overview</a>
+                        <ul class="dropdown-menu dark" data-role="dropdown">
+                            <li><a href="./template.html"><i class="icon-clipboard-2"></i> Project Template</a></li>
+                            <li><a href="./architecture.html"><i class="icon-puzzle"></i> Architecture</a></li>
+                            <li><a href="./mvvm.html"><i class="icon-tree-view"></i> Model-View-ViewModel</a></li>
+                            <li><a href="./statechart.html"><i class="icon-tab"></i> Statechart</a></li>
+                            <li><a href="./routing.html"><i class="icon-share"></i> Routing</a></li>
+                            <li><a href="./composition.html"><i class="icon-screen"></i> UI Composition</a></li>
+                            <li><a href="./gridlayout.html"><i class="icon-grid-view"></i> Grid Layout</a></li>
+                            <!-- <li><a href="./styles.html"><i class="icon-droplet"></i> Styles</a></li>
+                            <li><a href="./extensions.html"><i class="icon-wrench"></i> Extensions</a></li>
+                            <li><a href="./api.html"><i class="icon-book"></i> API Documentation</a></li>-->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">UI Components</a>
+                        <ul class="dropdown-menu dark" data-role="dropdown">
+                            <li>
+                                <a class="dropdown-toggle" href=""><i class="icon-grid"></i> Grid</a>
+                                <ul class="dropdown-menu" data-role="dropdown">
+                                    <li><a href="./grid1.html">Introduction</a></li>
+                                    <li><a href="./grid2.html">Filtering</a></li>
+                                    <li><a href="./grid3.html">Sorting</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./autocomplete.html"><i class="icon-search"></i> Autocomplete</a></li>
+                            <li><a href="./visualization.html"><i class="icon-target"></i> Visualization</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">Tutorials</a>
+                        <ul class="dropdown-menu dark" data-role="dropdown">
+                            <li><a href="./todomvc.html">ToDoMVC</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle">Documentation</a>
+                        <ul class="dropdown-menu dark" data-role="dropdown">
+                            <li><a href="./scalejs-doc/index.html">scalejs</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="divider"></li>
+            <li><a title="Visual Studio Gallery" href="http://visualstudiogallery.msdn.microsoft.com/2a3d0050-ccab-458f-8bfc-2f2aca73e631"><span class="icon-box-add"></span> Visual Studio</a></li>
+            <li class="divider"></li>
+            <li><a title="GitHub" href="https://github.com/lisovin/scalejs/tree/master"><span class="icon-github-3"></span> GitHub</a></li>
+        </ul>
+
+        <div class="no-tablet-portrait no-phone">
+            <a href="./docs.html" class="element"><span class="icon-layers"></span> Docs</a>
+            <span class="element-divider"></span>
+
+            <a title="Visual Studio Gallery" href="http://visualstudiogallery.msdn.microsoft.com/2a3d0050-ccab-458f-8bfc-2f2aca73e631" class="element place-right"><span class="icon-box-add"></span> Visual Studio</a>
+            <span class="element-divider place-right"></span>
+
+            <a title="GitHub" href="https://github.com/lisovin/scalejs/tree/master" class="element place-right"><span class="icon-github-3"></span> GitHub</a>
+            <span class="element-divider place-right"></span>
+        </div>
+    </div>
+</nav>
+
+    </header>
+
+    <div id="container">
+
+        <div id="sidebar" class="sidebar no-tablet-portrait no-phone">
+            <ul>
+                <li class="title">Getting Started</li>
+                <li><a href="./docs.html"><i class="icon-star-3"></i> Introduction</a></li>
+                <li><a href="./install.html"><i class="icon-download-2"></i> Install Scalejs</a></li>
+                <li><a href="./project.html"><i class="icon-new"></i> Create an Application Project</a></li>
+                <li><a href="./running.html"><i class="icon-play"></i> Running your  Application</a></li>
+                <!--<li><a href="./build.html"><i class="icon-cloud"></i> Build and Deployment</a></li>
+                <li><a href="./test.html"><i class="icon-checkmark"></i> Testing</a></li>
+                <li><a href="./best.html"><i class="icon-thumbs-up"></i> Best Practices</a></li>-->
+                <li class="title">Overview</li>
+                <li><a href="./template.html"><i class="icon-clipboard-2"></i> Project Template</a></li>
+                <li><a href="./architecture.html"><i class="icon-puzzle"></i> Architecture</a></li>
+                <li><a href="./mvvm.html"><i class="icon-tree-view"></i> Model-View-ViewModel</a></li>
+                <li><a href="./statechart.html"><i class="icon-tab"></i> Statechart</a></li>
+                <li><a href="./routing.html"><i class="icon-share"></i> Routing</a></li>
+                <li><a href="./composition.html"><i class="icon-screen"></i> UI Composition</a></li>
+                <li><a href="./gridlayout.html"><i class="icon-grid-view"></i> Layout</a></li>
+                <!--<li><a href="./styles.html"><i class="icon-droplet"></i> Styles</a></li>
+                <li><a href="./extensions.html"><i class="icon-wrench"></i> Extensions</a></li>
+                <li><a href="./api.html"><i class="icon-book"></i> API Documentation</a></li>-->
+                <li class="title">UI Components</li>
+                <li>
+                    <a class="dropdown-toggle" href=""><i class="icon-grid"></i> Data Grid</a>
+                    <ul id="grid-dropdown" class="dropdown-menu" data-role="dropdown">
+                        <li><a href="./grid1.html">Introduction</a></li>
+                        <li><a href="./grid2.html">Filtering</a></li>
+                        <li><a href="./grid3.html">Sorting</a></li>
+                    </ul>
+                </li>
+                <li><a href="./autocomplete.html"><i class="icon-search"></i> Autocomplete</a></li>
+                <li><a href="./visualization.html"><i class="icon-target"></i> Visualization</a></li>
+                <li class="title">Tutorials</li>
+                <li><a href="./todomvc.html">ToDoMVC</a></li>
+                <li class="title">Documentation</li>
+                <li><a href="./scalejs-doc/index.html">ScaleJS</a></li>
+            </ul>
+        </div>
+
+        <div id="content">
+            <h1 id="how-to-build-a-form-with-scalejs-and-pjson">How to build a Form with Scalejs and PJSON</h1>
+<p>Building a form with Scalejs and PJSON is simple once you know how it&#39;s done. 
+Read this tutorial to learn how to do it.</p>
+<p>You should already have an application with a Scalejs/PJSON setup.
+In this tutorial I will be starting from <a href="https://github.com/EikosPartners/scalejs-app">scalejs seed</a> application which is a very basic setup for Scalejs. 
+You can also clone the results from this tutorial from the <code>form-example</code> branch.</p>
+<h2 id="tutorial-steps">Tutorial Steps</h2>
+<ol>
+<li>Get Common</li>
+<li>Add an Adapter</li>
+<li>Add an Input</li>
+<li>Add another Input</li>
+<li>Add a Validation</li>
+<li>Add a Rendered Expression</li>
+<li>Add a Select that gets values from JSON</li>
+<li>Add a Select that gets from a Store</li>
+<li>Add a Select that filters values from Store</li>
+<li>Add a List</li>
+<li>Post your Form Data</li>
+<li>Retrieve your Form Data</li>
+<li>Improve your form&#39;s Design</li>
+</ol>
+<h2 id="1-get-common">1. Get Common</h2>
+<p>If you do not already have common, you must have it in order to use the form elements.</p>
+<p><code>npm install --save scalejs.metadatafactory-common</code></p>
+<p>This will give you access to all of the <a href="https://github.com/EikosPartners/scalejs.metadataFactory-common">common</a>
+modules.
+You can import the modules in the same location where others are imported.
+In our sample app, that location is the <code>modules.js</code> file.</p>
+<p>The seed application in this tutorial is already importing common in order to use the template module.</p>
+<h2 id="2-add-an-adapter">2. Add an Adapter</h2>
+<p>The <a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-adapter.html">adapter</a>
+module allows for tracking of the other components which will be necessary to gather the data for a POST and use expressions.</p>
+<p>First ensure the Adapter is being imported into your application</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">'scalejs.metadatafactory-common/dist/adapter/adapterModule'</span>;
+</code></pre>
+<p>Now in your JSON file you will add the adapter:</p>
+<pre class="highlight"><code class="hljs json">{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"adapter"</span>,
+    <span class="hljs-attr">"children"</span>: [
+
+    ]
+}
+</code></pre>
+<h2 id="3-add-an-input">3. Add an Input</h2>
+<p>The <a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-input.html">input</a>
+component is used to gather user data input. It supports plenty of functionality, as any input functionality (large and small)
+will be baked into the options of an inputViewModel.</p>
+<p>We will start off with a very simple input. Again, ensure the Input is being imported into your application.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">'scalejs.metadatafactory-common/dist/input/inputModule'</span>;
+</code></pre>
+<p>In addition to this, our input module relies on an autocomplete package that is currently not configured correctly. 
+As a work around to this, we must add the following to your <em>webpack.config</em> <code>resolve.alias</code> fields.</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-string">'jquery-ui/autocomplete'</span>:  path.join(__dirname, <span class="hljs-string">'node_modules/jquery-ui/ui/widgets/autocomplete.js'</span>)<span class="hljs-string">`
+</span></code></pre>
+<p>Because we made changes to webpack.config you need to restart npm for the changes to take effect.</p>
+<p>Add the following input JSON as a child of the adapter</p>
+<pre class="highlight"><code class="hljs json">{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"adapter"</span>,
+    <span class="hljs-attr">"children"</span>: [
+        !!*{            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"name"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"text"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Name?"</span>
+        }**!
+    ]
+}
+</code></pre>
+<p>Refresh your application to see the new input.</p>
+<p><img src="./1_add_input.jpg" alt="One input down"></p>
+<h2 id="4-add-another-input">4. Add another Input</h2>
+<p>A form rarely has just one question so let&#39;s add another field.
+This time we will use the datepicker type.</p>
+<pre class="highlight"><code class="hljs json">{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"adapter"</span>,
+    <span class="hljs-attr">"children"</span>: [
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"name"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"text"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Name?"</span>
+        }!!*,
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"birthday"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"datepicker"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Birthday?"</span>
+        }**!
+    ]
+}
+</code></pre>
+<p>Now you will see two inputs on the page. One of them is of type datepicker.</p>
+<p><img src="./2_add_another_input.jpg" alt="Two inputs down"></p>
+<h2 id="5-add-a-validation">5. Add a Validation</h2>
+<p>Forms are great but one thing we need is to be able to add validations.
+For most of your validation needs, you can use one of the ones specified in <a href="https://github.com/Knockout-Contrib/Knockout-Validation">Knockout-Validation</a>.</p>
+<p>In addition to this, we also have expression validations which utilize the context of the PJSON form
+to allow you to write conditional validations against other values which are already in the form.</p>
+<pre class="highlight"><code class="hljs json">{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"adapter"</span>,
+    <span class="hljs-attr">"children"</span>: [
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"name"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"text"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Name?"</span>!!*,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"validations"</span>: {
+                    <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>
+                }
+            }**!
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"birthday"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"datepicker"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Birthday?"</span>
+        }
+    ]
+}
+</code></pre>
+<p><img src="./3_add_validation.jpg" alt="Validations"></p>
+<h2 id="6-add-rendered-expression">6. Add Rendered Expression</h2>
+<p>All PJSON Components have the capability to use rendered expressions.
+A rendered expression is an expression (again, based on context) which
+will determine whether or not the component will be rendered.</p>
+<p>Once an input is not rendered, it also will not be available within the data
+context, so if you still need adapter tracking, you&#39;ll need to set <code>trackIfHidden</code> to true.</p>
+<p>For these changes I&#39;ll add an additional input that will determine whether or not we need
+to gather the user&#39;s birthday.</p>
+<pre class="highlight"><code class="hljs undefined">{
+    "type": "adapter",
+    "children": [
+        {            
+            "id": "name",
+            "type": "input",
+            "inputType": "text",
+            "label": "What is your Name?",
+            "options": {
+                "validations": {
+                    "required": true
+                }
+            }
+        }!!*,
+        {            
+            "id": "isHuman",
+            "type": "input",
+            "inputType": "radio",
+            "label": "Are you Human?"
+        },**!
+        {            
+            "id": "birthday",
+            !!*"rendered": "isHuman",**!
+            "type": "input",
+            "inputType": "datepicker",
+            "label": "What is your Birthday?"
+        }
+    ]
+}
+</code></pre>
+<p>First the user must specify if they are indeed a human.</p>
+<p><img src="./4_add_rendered.jpg" alt="should it be rendered?"></p>
+<p>If so, they have a birthday so only then do we ask for it.</p>
+<p><img src="./5_add_rendered_cont.jpg" alt="it&#39;s rendered"></p>
+<p>What happened here is that we added a radio input which defaults to Yes/No and underlying values of true/false. </p>
+<p>This is also the first time we have used the ids I have been adding with each input.
+Every input with an <strong>id</strong> is tracked by the parent adapter. In order to leverage the values
+from other inputs, you use the id. </p>
+<p>For the rendered expression for our birthday input,
+we are using <code>isHuman</code>, which evaluated to the value of the <strong>isHuman</strong> input. Which is true/false or empty.
+The expression will only evaluate to <strong>true</strong> if the user selects yes which will control the rendering of the birthday input.</p>
+<p>Though <code>isHuman</code> may be a very simple expression, there are plenty of other 
+ways one can write and leverage expressions. For instance, another way this could have been written is <code>isHuman === true</code>.</p>
+<h2 id="7-add-a-select-that-gets-from-json">7. Add a Select that gets from JSON</h2>
+<p>Now that we have added a few inputs we might want to start doing something
+more complex, such as getting values for a select from a reference data endpoint.</p>
+<p>To make it easy let&#39;s just start off by adding a select that will get from a local data source (i.e. from PJSON).</p>
+<pre class="highlight"><code class="hljs json">{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"adapter"</span>,
+    <span class="hljs-attr">"children"</span>: [
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"name"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"text"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Name?"</span>,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"validations"</span>: {
+                    <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>
+                }
+            }
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"isHuman"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"radio"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Are you Human?"</span>
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"birthday"</span>,
+            <span class="hljs-attr">"rendered"</span>: <span class="hljs-string">"isHuman"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"datepicker"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Birthday?"</span>
+        }!!*,
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"color"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"select"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Select the best color:"</span>,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"values"</span>: [
+                    <span class="hljs-string">"Red"</span>,
+                    <span class="hljs-string">"Orange"</span>,
+                    <span class="hljs-string">"Yellow"</span>,
+                    <span class="hljs-string">"Green"</span>,
+                    <span class="hljs-string">"Blue"</span>,
+                    <span class="hljs-string">"Purple"</span>
+                ]
+            }
+        }**!
+    ]
+}
+</code></pre>
+<p>That was almost too easy. Better yet if these values were coming from a server
+so that we could change the options the user can select from without modifying our UI assets.</p>
+<h2 id="8-add-a-select-that-gets-from-a-store">8. Add a Select that gets from a Store</h2>
+<p>In step 7 we added a select that simply gets its options from the JSON.
+Now we will add an extra step to get these values from a REST call.</p>
+<p>In order to do this, I will add a simple endpoint to our mock backend to retrieve the values:</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">/* GET Colors */</span>
+app.get(<span class="hljs-string">'/colors'</span>, (req, res, next) =&gt; {
+    res.send({
+        <span class="hljs-attr">data</span>: [
+            {
+                <span class="hljs-attr">value</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'Red'</span>
+            },
+            {
+                <span class="hljs-attr">value</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'Orange'</span>
+            },
+            {
+                <span class="hljs-attr">value</span>: <span class="hljs-number">2</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'Yellow'</span>
+            },
+            {
+                <span class="hljs-attr">value</span>: <span class="hljs-number">3</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'Green'</span>
+            },
+            {
+                <span class="hljs-attr">value</span>: <span class="hljs-number">4</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'Blue'</span>
+            },
+            {
+                <span class="hljs-attr">value</span>: <span class="hljs-number">5</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'Purple'</span>
+            }
+        ]
+    })
+});
+</code></pre>
+<p>After a server restart and I have verified this data is coming in as desired, now I will add a store to our PJSON
+and hook the Select source into this.</p>
+<p>A <code>store</code> is a PJSON Data Component that takes in a dataSourceEndpoint object and populates a key 
+within the <code>scalejs.noticeboard</code> under a specified <code>storeKey</code>.</p>
+<p>The first step when using a new component is to ensure it is being imported with your other modules:</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">'scalejs.metadatafactory-common/dist/store/storeModule'</span>;
+</code></pre>
+<p>Underneath the hood, the <code>store</code> relies on an <code>action</code>, more specifically, an <code>ajax</code> action to perform its data-service call.</p>
+<p>To that end, we need two more imports to satisfy the prerequisites we need to use store:</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">'scalejs.metadatafactory-common/dist/action/actionModule'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'scalejs.metadatafactory-common/dist/action/actions/ajax'</span>;
+</code></pre>
+<p>Now that we have imported store, action, and an ajax action, and also assuming your PJSON/Scalejs Setup has a proper dataservice (such as the one included in the tutorial seed),
+we can use this JSON to populate our select:</p>
+<pre class="highlight"><code class="hljs json">{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"adapter"</span>,
+    <span class="hljs-attr">"children"</span>: [
+        !!*{
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"store"</span>,
+            <span class="hljs-attr">"keyMap"</span>: {
+                <span class="hljs-attr">"resultsKey"</span>: <span class="hljs-string">"data"</span>
+            },
+            <span class="hljs-attr">"storeKey"</span>: <span class="hljs-string">"colorsSource"</span>,
+            <span class="hljs-attr">"dataSourceEndpoint"</span>: {
+                <span class="hljs-attr">"target"</span>: {
+                    <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"colors"</span>
+                }
+            }
+        },**!
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"name"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"text"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Name?"</span>,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"validations"</span>: {
+                    <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>
+                }
+            }
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"isHuman"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"radio"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Are you Human?"</span>
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"birthday"</span>,
+            <span class="hljs-attr">"rendered"</span>: <span class="hljs-string">"isHuman"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"datepicker"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Birthday?"</span>
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"color"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"select"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Select the best color:"</span>,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"values"</span>: !!*{
+                    <span class="hljs-attr">"fromArray"</span>: <span class="hljs-string">"store.colorsSource"</span>,
+                    <span class="hljs-attr">"textKey"</span>: <span class="hljs-string">"text"</span>,
+                    <span class="hljs-attr">"valueKey"</span>: <span class="hljs-string">"value"</span>
+                }**!
+            }
+        }
+    ]
+}
+</code></pre>
+<p>We have added the <code>store</code> to the top of the <code>adapter</code>&#39;s children 
+and also modified the <code>values</code> option in the select from the previous step.</p>
+<p><img src="./6_add_select_store.jpg" alt="Select the best color from the server"></p>
+<p>One neat thing about this approach to populating dropdowns is how the <code>fromArray</code> field works.
+The <code>fromArray</code> field expects an <em>expression</em> to be passed to it. By default, all components have access to 
+the <strong>store</strong> object in their expressions. In this case we are using a <em>memberExpression</em> to get the
+<code>colorsSource</code> from the <code>store</code>. </p>
+<p>This unexpected usecase for our expression parsing engine allows even greater manipulation of select sources
+straight from JSON.</p>
+<h2 id="9-add-a-select-that-filters-values-from-store">9. Add a Select that filters values from Store</h2>
+<p>So far everything we have done has been rather straight forward. 
+But sometimes a form requires a little extra functionality.
+In this new use case we want to leverage the expression parsing capabilities 
+of a select dropdown&#39;s <code>fromArray</code> field and get a chance to use lodash in our expressions.</p>
+<p>In order to do this we will filter a second select based upon what was selected in the first one.
+Add a new REST endpoint for this new data source (requires server restart):</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">/* GET Things */</span>
+app.get(<span class="hljs-string">'/things'</span>, (req, res, next) =&gt; {
+    res.send({
+        <span class="hljs-attr">data</span>: [
+            {
+                <span class="hljs-attr">color</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'Apples'</span>
+            },
+            {
+                <span class="hljs-attr">color</span>: <span class="hljs-number">0</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'Fire Trucks'</span>
+            },
+            {
+                <span class="hljs-attr">color</span>: <span class="hljs-number">1</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'Oranges'</span>
+            },
+            {
+                <span class="hljs-attr">color</span>: <span class="hljs-number">4</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'Sky'</span>
+            },
+            {
+                <span class="hljs-attr">color</span>: <span class="hljs-number">4</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'Oceans'</span>
+            },
+            {
+                <span class="hljs-attr">color</span>: <span class="hljs-number">4</span>,
+                <span class="hljs-attr">text</span>: <span class="hljs-string">'BlueBerry'</span>
+            }
+        ]
+    })
+});
+</code></pre>
+<p>When the user selects &quot;blue&quot; they will only be able to select things which are blue.</p>
+<p>Now we will make this JSON, adding another <code>store</code> and another <code>select</code>.</p>
+<pre class="highlight"><code class="hljs json">{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"adapter"</span>,
+    <span class="hljs-attr">"children"</span>: [
+        {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"store"</span>,
+            <span class="hljs-attr">"keyMap"</span>: {
+                <span class="hljs-attr">"resultsKey"</span>: <span class="hljs-string">"data"</span>
+            },
+            <span class="hljs-attr">"storeKey"</span>: <span class="hljs-string">"colorsSource"</span>,
+            <span class="hljs-attr">"dataSourceEndpoint"</span>: {
+                <span class="hljs-attr">"target"</span>: {
+                    <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"colors"</span>
+                }
+            }
+        }!!*,
+        {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"store"</span>,
+            <span class="hljs-attr">"keyMap"</span>: {
+                <span class="hljs-attr">"resultsKey"</span>: <span class="hljs-string">"data"</span>
+            },
+            <span class="hljs-attr">"storeKey"</span>: <span class="hljs-string">"thingsSource"</span>,
+            <span class="hljs-attr">"dataSourceEndpoint"</span>: {
+                <span class="hljs-attr">"target"</span>: {
+                    <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"things"</span>
+                }
+            }
+        },**!
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"name"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"text"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Name?"</span>,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"validations"</span>: {
+                    <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>
+                }
+            }
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"isHuman"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"radio"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Are you Human?"</span>
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"birthday"</span>,
+            <span class="hljs-attr">"rendered"</span>: <span class="hljs-string">"isHuman"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"datepicker"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Birthday?"</span>
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"color"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"select"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Select the best color:"</span>,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"values"</span>: {
+                    <span class="hljs-attr">"fromArray"</span>: <span class="hljs-string">"store.colorsSource"</span>,
+                    <span class="hljs-attr">"textKey"</span>: <span class="hljs-string">"text"</span>,
+                    <span class="hljs-attr">"valueKey"</span>: <span class="hljs-string">"value"</span>
+                }
+            }
+        }!!*,
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"thing"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"select"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Select a thing of that color:"</span>,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"values"</span>: {
+                    <span class="hljs-attr">"fromArray"</span>: <span class="hljs-string">"_.filter(store.thingsSource, ['color', color])"</span>,
+                    <span class="hljs-attr">"textKey"</span>: <span class="hljs-string">"text"</span>,
+                    <span class="hljs-attr">"valueKey"</span>: <span class="hljs-string">"text"</span>
+                }
+            }
+        }**!
+    ]
+}
+</code></pre>
+<p>This actually does work, once we have selected &quot;blue&quot; we can see the options for the second dropdown are filtered.</p>
+<p><img src="./7_add_second_select.jpg" alt="It&#39;s probably magic?"></p>
+<p>To understand further what is going on here, let&#39;s deconstruct the expression:</p>
+<p><code>_.filter(store.thingsSource, [&#39;color&#39;, color])</code></p>
+<p><a href="https://lodash.com/docs/4.17.2#filter">_.filter</a> is being passed 2 arguments,
+<code>store.thingsSource</code>  and an array which tells lodash which property to filter on.
+In this case, by passing <code>[&#39;color&#39;, color]</code>, it will check each object in the source array&#39;s <code>color</code> field
+and make sure it matches the result of the user-input into the <code>color</code> select inputbox. 
+(color is the <strong>id</strong> of the color selection field)</p>
+<p>As you can see, having the ability to use lodash in our expressions allows us to use advanced functionality without having to create custom code.</p>
+<h2 id="10-add-a-list">10. Add a List</h2>
+<p>Now that we have covered basic inputs and more, one more form feature we would like to show before we move into Persisting our form data is to have a list entry.
+That means you want to gather multiple answers from the user that they enter in a list format.
+You have two options for list entry, <code>list</code> and <code>listAdvanced</code>. We will cover these more indepth in our APIs and other docs, with the main difference being that 
+<code>listAdvanced</code> gives you a tabular view of your list as well as the ability to populate additional headers and footers.</p>
+<p>For our simple tutorial we will only use a <code>list</code>. A List takes in an array of <code>items</code> which are other PJSON components, namely, inputs.</p>
+<p>Again we will start off by importing the module we desire:</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">'scalejs.metadatafactory-common/dist/list/listModule'</span>;
+</code></pre>
+<p>In our JSON we will add 2 components - a <code>textLabel</code> component to have a label without the input,
+and a <code>list</code> component. Within the List&#39;s <code>items</code> array, we will specify an <code>input</code> and for aesthetic purposes we will hide the label.</p>
+<pre class="highlight"><code class="hljs json">{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"adapter"</span>,
+    <span class="hljs-attr">"children"</span>: [
+        {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"store"</span>,
+            <span class="hljs-attr">"keyMap"</span>: {
+                <span class="hljs-attr">"resultsKey"</span>: <span class="hljs-string">"data"</span>
+            },
+            <span class="hljs-attr">"storeKey"</span>: <span class="hljs-string">"colorsSource"</span>,
+            <span class="hljs-attr">"dataSourceEndpoint"</span>: {
+                <span class="hljs-attr">"target"</span>: {
+                    <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"colors"</span>
+                }
+            }
+        },
+        {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"store"</span>,
+            <span class="hljs-attr">"keyMap"</span>: {
+                <span class="hljs-attr">"resultsKey"</span>: <span class="hljs-string">"data"</span>
+            },
+            <span class="hljs-attr">"storeKey"</span>: <span class="hljs-string">"thingsSource"</span>,
+            <span class="hljs-attr">"dataSourceEndpoint"</span>: {
+                <span class="hljs-attr">"target"</span>: {
+                    <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"things"</span>
+                }
+            }
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"name"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"text"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Name?"</span>,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"validations"</span>: {
+                    <span class="hljs-attr">"required"</span>: <span class="hljs-literal">true</span>
+                }
+            }
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"isHuman"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"radio"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Are you Human?"</span>
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"birthday"</span>,
+            <span class="hljs-attr">"rendered"</span>: <span class="hljs-string">"isHuman"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"datepicker"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"What is your Birthday?"</span>
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"color"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"select"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Select the best color:"</span>,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"values"</span>: {
+                    <span class="hljs-attr">"fromArray"</span>: <span class="hljs-string">"store.colorsSource"</span>,
+                    <span class="hljs-attr">"textKey"</span>: <span class="hljs-string">"text"</span>,
+                    <span class="hljs-attr">"valueKey"</span>: <span class="hljs-string">"value"</span>
+                }
+            }
+        },
+        {            
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"thing"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"select"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Select a thing of that color:"</span>,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"values"</span>: {
+                    <span class="hljs-attr">"fromArray"</span>: <span class="hljs-string">"_.filter(store.thingsSource, ['color', color])"</span>,
+                    <span class="hljs-attr">"textKey"</span>: <span class="hljs-string">"text"</span>,
+                    <span class="hljs-attr">"valueKey"</span>: <span class="hljs-string">"text"</span>
+                }
+            }
+        }!!*,
+        {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+            <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"textLabel"</span>,
+            <span class="hljs-attr">"label"</span>: <span class="hljs-string">"Please list your friends:"</span>
+        },
+        {
+            <span class="hljs-attr">"id"</span>: <span class="hljs-string">"friends"</span>,
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"list"</span>,
+            <span class="hljs-attr">"items"</span>: [
+                {
+                    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"name"</span>,
+                    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"input"</span>,
+                    <span class="hljs-attr">"inputType"</span>: <span class="hljs-string">"text"</span>,
+                    <span class="hljs-attr">"options"</span>: {
+                        <span class="hljs-attr">"showLabel"</span>: <span class="hljs-literal">false</span>
+                    }
+                }
+            ]
+        }**!
+    ]
+}
+</code></pre>
+<p>After refreshing you will see an &quot;Add&quot; button appear which allows you to add items to the list.</p>
+<p><img src="./8_add_list.jpg" alt="Add items to a list"></p>
+<h2 id="11-post-your-form-data">11. POST your form data</h2>
+<p>Now that we have created a beautiful(ly functional) form, we will want to try to POST the data and persist it on our backend.</p>
+<p>For this we will want to add two things: an ajax save <code>action</code> and a <code>validations</code> component, so that we cannot save until our form is valid.</p>
+<p>We already imported the <code>action</code> and the <code>ajax</code> action when we used a <code>store</code>,
+so we only need to import the validations component:</p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">'scalejs.metadatafactory-common/dist/validations/validationsModule'</span>;
+</code></pre>
+<p>Once imported you can add the validations component as a child to the adapter.
+Also, we will want to add an <code>id</code> to the adapter so that we can leverage the validations component,
+which relies upon the <code>id</code> of the adapter.</p>
+<pre class="highlight"><code class="hljs json">{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"adapter"</span>,
+    <span class="hljs-attr">"id"</span>: <span class="hljs-string">"basicForm"</span>,
+    <span class="hljs-attr">"children"</span>: [
+        {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"validations"</span>
+        },
+</code></pre>
+<p>At the end of our form we will add an <code>action</code> with an <code>actionType</code> of ajax and
+tell it to POST to a REST service (which will be implemented in the next step).</p>
+<pre class="highlight"><code class="hljs json">        {
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"action"</span>,
+            <span class="hljs-attr">"actionType"</span>: <span class="hljs-string">"ajax"</span>,
+            <span class="hljs-attr">"text"</span>: <span class="hljs-string">"Save"</span>,
+            <span class="hljs-attr">"options"</span>: {
+                <span class="hljs-attr">"target"</span>: {
+                    <span class="hljs-attr">"uri"</span>: <span class="hljs-string">"form"</span>,
+                    <span class="hljs-attr">"options"</span>: {
+                        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"POST"</span>
+                    }
+                }
+            }
+        }
+</code></pre>
+<p>Our full JSON now looks like this:</p>
+<pre class="highlight"><code class="hljs undefined">{
+    "type": "adapter",
+    !!*"id": "basicForm",**!
+    "children": [
+        !!*{
+            "type": "validations"
+        },**!
+        {
+            "type": "store",
+            "keyMap": {
+                "resultsKey": "data"
+            },
+            "storeKey": "colorsSource",
+            "dataSourceEndpoint": {
+                "target": {
+                    "uri": "colors"
+                }
+            }
+        },
+        {
+            "type": "store",
+            "keyMap": {
+                "resultsKey": "data"
+            },
+            "storeKey": "thingsSource",
+            "dataSourceEndpoint": {
+                "target": {
+                    "uri": "things"
+                }
+            }
+        },
+        {            
+            "id": "name",
+            "type": "input",
+            "inputType": "text",
+            "label": "What is your Name?",
+            "options": {
+                "validations": {
+                    "required": true
+                }
+            }
+        },
+        {            
+            "id": "isHuman",
+            "type": "input",
+            "inputType": "radio",
+            "label": "Are you Human?"
+        },
+        {            
+            "id": "birthday",
+            "rendered": "isHuman",
+            "type": "input",
+            "inputType": "datepicker",
+            "label": "What is your Birthday?"
+        },
+        {            
+            "id": "color",
+            "type": "input",
+            "inputType": "select",
+            "label": "Select the best color:",
+            "options": {
+                "values": {
+                    "fromArray": "store.colorsSource",
+                    "textKey": "text",
+                    "valueKey": "value"
+                }
+            }
+        },
+        {            
+            "id": "thing",
+            "type": "input",
+            "inputType": "select",
+            "label": "Select a thing of that color:",
+            "options": {
+                "values": {
+                    "fromArray": "_.filter(store.thingsSource, ['color', color])",
+                    "textKey": "text",
+                    "valueKey": "text"
+                }
+            }
+        },
+        {
+            "type": "input",
+            "inputType": "textLabel",
+            "label": "Please list your friends:"
+        },
+        {
+            "id": "friends",
+            "type": "list",
+            "items": [
+                {
+                    "id": "name",
+                    "type": "input",
+                    "inputType": "text",
+                    "options": {
+                        "showLabel": false
+                    }
+                }
+            ]
+        }!!*,
+        {
+            "type": "action",
+            "actionType": "ajax",
+            "text": "Save",
+            "options": {
+                "target": {
+                    "uri": "form",
+                    "options": {
+                        "type": "POST"
+                    }
+                }
+            }
+        }**!
+    ]
+}
+</code></pre>
+<p>Now we can fill out our form and press the save button:</p>
+<p><img src="./9_form_preview.jpg" alt="A form for four year olds"></p>
+<p>And we are able to verify the data is being sent with the network tab:</p>
+<p><img src="./9_post_data.jpg" alt="Go Data Go"></p>
+<h2 id="12-retrieve-your-form-data">12. Retrieve your Form Data</h2>
+<p>More coming soon.</p>
+<!--```JSON
+
+```-->
+        </div>
+
+    </div>
+
+</body>
+</html>

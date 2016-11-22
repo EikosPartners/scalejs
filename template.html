@@ -11,7 +11,7 @@
   <script src="style/metro.min.js"></script>
   <link rel="stylesheet" href="highlight.css" />
 
-  <meta name="generator" content="DocPad v6.60.4" />
+  <meta name="generator" content="DocPad v6.79.0" />
   <link  rel="stylesheet" href="highlight.css" />
 
   <style>
@@ -231,16 +231,16 @@ Projects can be run by pressing <strong>ctrl + f5</strong>. </p>
 <h3 id="index-html-and-config-js">index.html and config.js</h3>
 <p>index.html is the starting point for your app. </p>
 <p><strong>index.html</strong></p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"config.js"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"Scripts/require.js"</span> <span class="hljs-attribute">data-main</span>=<span class="hljs-value">"app/app"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>helloworld application (development version).<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"config.js"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"Scripts/require.js"</span> <span class="hljs-attr">data-main</span>=<span class="hljs-string">"app/app"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>helloworld application (development version).<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
 <p>Only two scripts are referenced in this file: config.js and require.js. 
 The use of <a href="http://requirejs.org/">requirejs</a> allows us to write code in seperate files,
@@ -267,10 +267,10 @@ of scalejs and are ready to <a href="./extension.html">build your own extension<
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">/*global require*/</span>
 <span class="hljs-built_in">require</span>([
     <span class="hljs-string">'scalejs!application/main'</span>
-], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(
+], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">
     application
-)</span> {</span>
-<span class="hljs-pi">    'use strict'</span>;
+</span>) </span>{
+<span class="hljs-meta">    'use strict'</span>;
 
     application.run();
 });
@@ -298,13 +298,13 @@ define([
     <span class="hljs-string">'views!main'</span>,
     <span class="hljs-string">'bindings!main'</span>,
     <span class="hljs-string">'styles!main'</span>
-], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(
+], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">
     sandbox,
     mainViewModel
-)</span> {</span>
-<span class="hljs-pi">    'use strict'</span>;
+</span>) </span>{
+<span class="hljs-meta">    'use strict'</span>;
 
-    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">main</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">var</span> <span class="hljs-comment">// imports</span>
             root = sandbox.mvvm.root,
             template = sandbox.mvvm.template,
@@ -318,7 +318,7 @@ define([
         registerStates(<span class="hljs-string">'root'</span>,
             state(<span class="hljs-string">'app'</span>,
                 state(<span class="hljs-string">'main'</span>,
-                    onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+                    onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
                         <span class="hljs-comment">// Render viewModel using 'main_template' template </span>
                         <span class="hljs-comment">// (defined in main.html) and show it in the `root` region.</span>
                         root(template(<span class="hljs-string">'main_template'</span>, viewModel));
@@ -337,9 +337,9 @@ at the top of define as seen above and define the <a href="./statechart.html">st
 <h3 id="view-folder-and-main-html">view folder and main.html</h3>
 <p>The view folder is a container of <a href="./mvvm.thml#views">views</a> and includes one view file for the main module:</p>
 <p><strong>main.html</strong></p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"main_template"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"main text"</span> <span class="hljs-attribute">data-class</span>=<span class="hljs-value">"main-text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> from helloworld.
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main_template"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"main text"</span> <span class="hljs-attr">data-class</span>=<span class="hljs-string">"main-text"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span> from helloworld.
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <p>It consists of a single template, <code>main_template</code>. This template text which is bound to a <code>data-class</code> named <code>main-text</code>.
 The purpose of the view is to contain the templates needed for the module. Usually, it is neccesary to bind components
@@ -354,9 +354,9 @@ it <em>must</em> be created in the bindings. This data-class is defined in <stro
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">/*global define */</span>
 <span class="hljs-comment">/*jslint sloppy: true*/</span>
 define({
-    <span class="hljs-string">'main-text'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+    <span class="hljs-string">'main-text'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">return</span> {
-            text: <span class="hljs-keyword">this</span>.text
+            <span class="hljs-attr">text</span>: <span class="hljs-keyword">this</span>.text
         };
     }
 });
@@ -375,19 +375,19 @@ The viewmodel used in the main module is <strong>mainViewModel.js</strong></p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">/*global define */</span>
 define([
     <span class="hljs-string">'sandbox!main'</span>
-], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(
+], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">
     sandbox
-)</span> {</span>
-<span class="hljs-pi">    'use strict'</span>;
+</span>) </span>{
+<span class="hljs-meta">    'use strict'</span>;
 
-    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">var</span> <span class="hljs-comment">// imports</span>
             observable = sandbox.mvvm.observable,
             <span class="hljs-comment">// properties</span>
             text = observable(<span class="hljs-string">'Hello World'</span>);
 
         <span class="hljs-keyword">return</span> {
-            text: text
+            <span class="hljs-attr">text</span>: text
         };
     };
 });
@@ -411,8 +411,8 @@ define([
     <span class="hljs-string">'jasmine-html'</span>,
     <span class="hljs-string">'scalejs!application'</span>,
     <span class="hljs-string">'./mainViewModel.test'</span>
-], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-<span class="hljs-pi">    'use strict'</span>;
+], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+<span class="hljs-meta">    'use strict'</span>;
 
     <span class="hljs-keyword">var</span> jasmineEnv = jasmine.getEnv(),
         htmlReporter = <span class="hljs-keyword">new</span> jasmine.HtmlReporter();
@@ -420,7 +420,7 @@ define([
     jasmineEnv.updateInterval = <span class="hljs-number">1000</span>;
     jasmineEnv.addReporter(htmlReporter);
 
-    jasmineEnv.specFilter = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(spec)</span> {</span>
+    jasmineEnv.specFilter = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">spec</span>) </span>{
         <span class="hljs-keyword">return</span> htmlReporter.specFilter(spec);
     };
 
@@ -437,11 +437,11 @@ define([
     <span class="hljs-string">'scalejs!core'</span>,
     <span class="hljs-string">'app/main/viewmodels/mainViewModel'</span>,
     <span class="hljs-string">'scalejs!application'</span>
-], <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(core, mainViewModel)</span> {</span>
-    describe(<span class="hljs-string">'`mainViewModel`'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">core, mainViewModel</span>) </span>{
+    describe(<span class="hljs-string">'`mainViewModel`'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">var</span> vm = mainViewModel(core.buildSandbox(<span class="hljs-string">'main.test'</span>));
 
-        it(<span class="hljs-string">'text is set to "Hello World" after initialization.'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+        it(<span class="hljs-string">'text is set to "Hello World" after initialization.'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
             expect(vm).toBeDefined();
             expect(vm.text()).toBe(<span class="hljs-string">'Hello World'</span>);
         });

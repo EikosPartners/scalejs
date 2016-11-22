@@ -11,7 +11,7 @@
   <script src="style/metro.min.js"></script>
   <link rel="stylesheet" href="highlight.css" />
 
-  <meta name="generator" content="DocPad v6.60.4" />
+  <meta name="generator" content="DocPad v6.79.0" />
   <link  rel="stylesheet" href="highlight.css" />
 
   <style>
@@ -270,12 +270,12 @@ structures by defining states as children or siblings of other states.</p>
 <p>You can create infinitely long statecharts, or create and organized structure with abstracted code</p>
 <h5 id="example-abstracting-states-into-functions">Example: abstracting states into functions</h5>
 <pre class="highlight"><code class="hljs javascript">
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stateA</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stateA</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">return</span> state(<span class="hljs-string">"A"</span>,                                
             state(<span class="hljs-string">"A.1"</span>), state(<span class="hljs-string">"A.2"</span>));
     }
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stateB</span><span class="hljs-params">()</span> {</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">stateB</span>(<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">return</span> state(<span class="hljs-string">"B"</span>,                                
             state(<span class="hljs-string">"B.1"</span>),                            
             state(<span class="hljs-string">"B.2"</span>),
@@ -345,7 +345,7 @@ how to create states and nest states, but we haven&#39;t told you what you can <
 
     registerStates(<span class="hljs-string">"app"</span>,
         state(<span class="hljs-string">"main"</span>,
-            onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
                 <span class="hljs-comment">// do stuff here!</span>
                 sandbox.debug.log(<span class="hljs-string">"onEntry of main state called"</span>);
             })));
@@ -361,7 +361,7 @@ how to create states and nest states, but we haven&#39;t told you what you can <
 
     registerStates(<span class="hljs-string">"app"</span>,
         state(<span class="hljs-string">"main"</span>,
-            onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
                 <span class="hljs-comment">// you can set state properties by adding them to "this"</span>
 
                 <span class="hljs-keyword">this</span>.region = viewModel.region;
@@ -384,7 +384,7 @@ This gives you control over what is displayed in the view when in certain states
 
     registerStates(<span class="hljs-string">"app"</span>,
         state(<span class="hljs-string">"main"</span>,
-            onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
                 <span class="hljs-comment">// when entering a state, you can choose to update the viewModel to reflect that state</span>
 
                 viewModel.entered(<span class="hljs-literal">true</span>);
@@ -409,11 +409,11 @@ so that states only need to worry about how to display themselves!</p>
 
     registerStates(<span class="hljs-string">"app"</span>,
         state(<span class="hljs-string">"main"</span>,
-            onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
                 <span class="hljs-comment">// when entering a state, you can choose to update the viewModel to reflect that state</span>
                 viewModel.entered(<span class="hljs-literal">true</span>);
             }),
-            onExit(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            onExit(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
                 <span class="hljs-comment">// when exiting a state, you can update the viewModel so it no londer indicates that it is in this state</span>
                 viewModel.entered(<span class="hljs-literal">false</span>);
             }));
@@ -460,10 +460,10 @@ to determine the flow of the application.</p>
             state(<span class="hljs-string">"main.loading"</span>),
             state(<span class="hljs-string">"main.loaded"</span>),
             state(<span class="hljs-string">"main.error"</span>),
-            on(<span class="hljs-string">"main.loaded.completed"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> {</span>
+            on(<span class="hljs-string">"main.loaded.completed"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
                 <span class="hljs-keyword">return</span> data.success;
             }, goto(<span class="hljs-string">"main.loaded"</span>)),
-            on(<span class="hljs-string">"main.loaded.completed"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> {</span>
+            on(<span class="hljs-string">"main.loaded.completed"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
                 <span class="hljs-keyword">return</span> !data.success;
             }, goto(<span class="hljs-string">"main.error"</span>))));
 </code></pre>
@@ -493,8 +493,8 @@ If a transition is defined for the event in the current state that it&#39;s in, 
     registerStates(<span class="hljs-string">"app"</span>,
         state(<span class="hljs-string">"main"</span>,
             state(<span class="hljs-string">"main.loading"</span>,
-                onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-                    viewModel.load(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+                onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                    viewModel.load(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
                         raise(<span class="hljs-string">"main.loaded.completed"</span>)
                     });
                 })),
@@ -522,17 +522,17 @@ state.</p>
     registerStates(<span class="hljs-string">"app"</span>,
         state(<span class="hljs-string">"main"</span>,
             state(<span class="hljs-string">"main.loading"</span>,
-                onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
-                    viewModel.load(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(success)</span> {</span>
-                        raise(<span class="hljs-string">"main.loaded.completed"</span>, { success: success })
+                onEntry(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+                    viewModel.load(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">success</span>) </span>{
+                        raise(<span class="hljs-string">"main.loaded.completed"</span>, { <span class="hljs-attr">success</span>: success })
                     });
                 })),
             state(<span class="hljs-string">"main.loaded"</span>),            
             state(<span class="hljs-string">"main.error"</span>),
-            on(<span class="hljs-string">"main.loaded.completed"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> {</span>
+            on(<span class="hljs-string">"main.loaded.completed"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
                 <span class="hljs-keyword">return</span> data.success;
             }, goto(<span class="hljs-string">"main.loaded"</span>)),
-            on(<span class="hljs-string">"main.loaded.completed"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(data)</span> {</span>
+            on(<span class="hljs-string">"main.loaded.completed"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
                 <span class="hljs-keyword">return</span> !data.success;
             }, goto(<span class="hljs-string">"main.error"</span>))));
 </code></pre>

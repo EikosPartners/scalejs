@@ -11,7 +11,7 @@
   <script src="style/metro.min.js"></script>
   <link rel="stylesheet" href="highlight.css" />
 
-  <meta name="generator" content="DocPad v6.60.4" />
+  <meta name="generator" content="DocPad v6.79.0" />
   
 
   <style>
@@ -284,14 +284,14 @@ At a minimum, you will need to set the following bindings to see a visualization
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">/*global define */</span>
 <span class="hljs-comment">/*jslint sloppy: true*/</span>
 define({
-    <span class="hljs-string">'main-viz'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+    <span class="hljs-string">'main-viz'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">return</span> {
-            d3: {
-                visualization: <span class="hljs-string">'treemap'</span>,
-                data: <span class="hljs-keyword">this</span>.model,
-                idPath: <span class="hljs-string">'name'</span>,
-                areaPath: <span class="hljs-string">'size'</span>,
-                colorPath: <span class="hljs-string">'x'</span>
+            <span class="hljs-attr">d3</span>: {
+                <span class="hljs-attr">visualization</span>: <span class="hljs-string">'treemap'</span>,
+                <span class="hljs-attr">data</span>: <span class="hljs-keyword">this</span>.model,
+                <span class="hljs-attr">idPath</span>: <span class="hljs-string">'name'</span>,
+                <span class="hljs-attr">areaPath</span>: <span class="hljs-string">'size'</span>,
+                <span class="hljs-attr">colorPath</span>: <span class="hljs-string">'x'</span>
             }
         };
     }
@@ -305,14 +305,14 @@ define({
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-comment">/*global define */</span>
 <span class="hljs-comment">/*jslint sloppy: true*/</span>
 define({
-    <span class="hljs-string">'main-viz'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+    <span class="hljs-string">'main-viz'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
         <span class="hljs-keyword">return</span> {
-            d3: {
-                visualization: <span class="hljs-string">'sunburst'</span>,
-                data: <span class="hljs-keyword">this</span>.model,
-                idPath: <span class="hljs-string">'name'</span>,
-                areaPath: <span class="hljs-string">'size'</span>,
-                colorPath: <span class="hljs-string">'x'</span>
+            <span class="hljs-attr">d3</span>: {
+                <span class="hljs-attr">visualization</span>: <span class="hljs-string">'sunburst'</span>,
+                <span class="hljs-attr">data</span>: <span class="hljs-keyword">this</span>.model,
+                <span class="hljs-attr">idPath</span>: <span class="hljs-string">'name'</span>,
+                <span class="hljs-attr">areaPath</span>: <span class="hljs-string">'size'</span>,
+                <span class="hljs-attr">colorPath</span>: <span class="hljs-string">'x'</span>
             }
         };
     }
