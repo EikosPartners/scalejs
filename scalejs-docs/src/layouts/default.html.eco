@@ -117,6 +117,7 @@
                 <li><a href="./visualization.html"><i class="icon-target"></i> Visualization</a></li>
                 <li class="title">Tutorials</li>
                 <li><a href="./todomvc.html">ToDoMVC</a></li>
+                <li><a href="./quick-start.html">Quick Start Guide</a></li>
                 <li class="title">Documentation</li>
                 <li><a href="./scalejs-doc/index.html">ScaleJS</a></li>
             </ul>

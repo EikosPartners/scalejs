@@ -209,21 +209,23 @@
         </div>
 
         <div id="content">
-            <h1 id="build-and-deployment">Build and Deployment</h1>
-<hr>
-
+            <h2 id="quick-start-guide">Quick Start Guide</h2>
+<p>The easiest way to get a scalejs project up and running is to use the <a href="https://github.com/EikosPartners/generator-scalejs">yeoman generator</a>.</p>
+<h2 id="steps">Steps</h2>
 <ol>
-<li><p>Dev mode: press <strong>CTRL + F5</strong> to run your project on <a href="http://localhost:8888/">http://localhost:8888/</a></p>
+<li>Install <code>yo</code> and the generator package <code>generator-scalejs</code><pre class="highlight"><code class="hljs mipsasm">npm <span class="hljs-keyword">install </span>-g yo generator-<span class="hljs-keyword">scalejs
+</span></code></pre></li>
+<li>Make a new directory and cd into it.<pre class="highlight"><code class="hljs dos"><span class="hljs-built_in">mkdir</span> myproject &amp;&amp; <span class="hljs-built_in">cd</span> myproject
+</code></pre></li>
+<li>Run the generator<pre class="highlight"><code class="hljs ebnf"><span class="hljs-attribute">yo scalejs</span>
+</code></pre></li>
+<li><p>Within the myproject directory run <code>npm start</code></p>
 </li>
-<li><p>Debug Mode: Build your project; your index file is index.debug.html and the compiled JS file is /js/[application name].js</p>
-</li>
-<li><p>Rlease Mode: Build your project; your index file is index.release.html and the compiled JS file is /js/[application name].min.js</p>
-</li>
-<li><p>NuGet Package deployment</p>
-</li>
-<li><p>Mobile Deployment</p>
+<li><p>Navigate to <a href="http://localhost:3000">http://localhost:3000</a> to view the application and you should see this page
+<img src="scalejsapp.png" alt="scalejs app homepage" style="width: 700px; height:400px"></p>
 </li>
 </ol>
+<p>You can now begin developing your application with scalejs! Check out the rest of the <a href="./docs.html">docs</a> for more information!</p>
 
         </div>
 
