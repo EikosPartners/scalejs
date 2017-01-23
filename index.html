@@ -3,8 +3,9 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <link rel="stylesheet" href="style/metro-bootstrap.min.css">
-	<link rel="stylesheet" href="style/metro-bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="style/bootstrap.min.css"/>
+    <link rel="stylesheet" href="style/metro-bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="style/metro-bootstrap.min.css" />
     <script src="style/jquery.min.js"></script>
 	<script src="style/jquery.ui.widget.js"></script>
     <script src="style/metro.min.js"></script>
@@ -12,15 +13,28 @@
 	<meta name="generator" content="DocPad v6.79.0" />
 	
 	<style>
-    #page-container {
-        padding-top: 45px;
-        width: 100%;
+
+    body {
+         background-color: #F2F2F2;
+    }
+
+    a {
+        text-decoration: none !important;
     }
 
 	#callout {
-        padding-top: 45px;
-        height: 250px;
+        position: relative;
+        top: 45px;
+        padding: 25px 10px;
+        background-color: #98dafc;
 	}
+
+    .content {
+        position: relative;
+        top: 45px;
+        max-width: 1140px;
+        margin: 15px auto;
+    }
 
     #callout-text {
         text-align: center;
@@ -39,21 +53,47 @@
     }
 
     #buttons-container .button {
-        margin: 0 10px;
+        margin: 10px;
         background: white;
-        color: #9a1616;
+        color: #052D42;
         border-radius: 6px;
         font-size: 24px;
         padding: 12px 16px;
-        display: inline-block;
         font-weight: 800;
+    }
+
+    .row {
+        padding: 0 15px;
+    }
+
+    .home-block {
+        text-align: justify;
+        margin-bottom: 10px;
+    }
+
+    hr {
+        color: black !important;
+        background-color: black !important;
+        width: 50%;
+        margin: 35px 0 !important;
+    }
+
+    .title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        #callout {
+            top: 0px;
+        }
     }
 
 	</style>
 </head>
 <body class="metro">
-    <div id="page-container">
-        <nav class="navigation-bar dark fixed-top">
+    <nav class="navigation-bar dark fixed-top">
     <div class="navigation-bar-content">
         <a href="./" class="element"><span class="icon-home"></span> SCALEJS</a>
         <span class="element-divider"></span>
@@ -140,51 +180,64 @@
 </nav>
 
 
-    	<div id="callout" class="bg-darkRed">
-    		<div class="container">
-    			<p id="callout-text" class="fg-white header">scalejs</p>
-    			<div style="height:10px"></div>
-    			<p id="callout-subtext" class="fg-white">
-    				A robust JavaScript framework for building versatile web and mobile applications in Visual Studio.
-    			</p>
-                <br />
-                <div id="buttons-container">
-                    <a class="button" href="./quick-start.html">Quick Start Guide</a>
-                    <a class="button" href="./docs.html">View the Docs</a>
-                </div>
-    		</div>
-    	</div>
+	<div id="callout">
+		<p id="callout-text" class="fg-white header">scalejs</p>
+		<div style="height:10px"></div>
+		<p id="callout-subtext" class="fg-white">
+			With the power of PJSON, scalejs can be used to build large, complicated apps using simple, reusable JSON.
+		</p>
+        <br />
+        <div id="buttons-container">
+            <a class="button" href="./quick-start.html">Quick Start Guide</a>
+            <a class="button" href="./docs.html">View the Docs</a>
+        </div>
+	</div>
 
-    	<div class="container content">
-    		<h2 id="extendable">Extendable</h2>
-<p>Extensibility is essential for building maintainble and scalable applications.
-The scalejs core is small and is designed to be extended to provide the features your application needs.
-They are installed and updated via NuGet which allows you to focus less on maintaining old code, and more on writing new code.</p>
-<p><br></p>
-<h2 id="build-large-applications">Build Large Applications</h2>
-<p>Scalejs is designed for building large and robust applications.
-It allows you to create modular apps which mean organized and loosely-coupled code.
-You also can write and run tests for your app.</p>
-<p><br></p>
-<h2 id="visual-studio-integration">Visual Studio Integration</h2>
-<p>You gain full access to the features in Visual Studio througout the development lifecycle. Scalejs comes with Visual Studio templates to get you started with your development.
-You can manage packages with NuGet easily, and also develop your own.
-Building and Running your project is a breeze and does the work of starting up a web server and creating deployable packages for you.
-Intellisense, a much beloved and useful feature, is provided for the entire scalejs API as well as code you write yourself.
-Not to mention that if your application relies on a .NET backend, you do not need to maintain seperate development enviroments and your team can code in one place.</p>
-<p><br></p>
-<h2 id="mobile">Mobile</h2>
-<p>Scalejs is optimized to run anywhere.
-When you build your application, you will wind up with seperate packages for Web, Android, IPad, and Windows 8.
-These will allow your web applications to have a native mobile feel to them; the user won&#39;t even know they&#39;re actually running an application created by HTML5 and JavaScript.
-Code once, deploy anywhere will allow your team to be more productive and efficient.</p>
-<p><br></p>
-<h2 id="extensive">Extensive</h2>
-<p>Scalejs core will allow you to add extensions as needed, and everything you need is already there for you to use.
-Most applications will make use of the MVVM pattern, state management, layout, and routing, so we&#39;ve already created these extensions.
-We also have developed various UI components such as grids, treemaps, and charts.</p>
+	<div class="content">
+        <div class="row">
+            <div class="home-block col-lg-4">
+                <div class="title"> Extendable </div>
+                Extensibility is essential for building maintainable and scalable applications.
+                The scalejs core is small and is designed to be extended to provide the features your application needs.
+                They are installed and updated via <a href="https://npmjs.org">npm</a> which allows you to focus less on maintaining old code, and more on writing new code.
+            </div>
 
-    	</div>
+            <div class="home-block col-lg-4">
+                <div class="title"> Build Large Applications </div>
+                Scalejs is designed for building large and robust applications.
+                It allows you to create modular apps which mean organized and loosely-coupled code.
+                You also can write and run tests for your app.
+            </div>
+
+            <div class="home-block col-lg-4">
+                <div class="title"> Mobile </div>
+                Scalejs is optimized to run anywhere.
+                Your web application will have a native mobile feel; the user won't even know they're actually running an application created by HTML5 and JavaScript.
+                Code once, deploy anywhere will allow your team to be more productive and efficient.
+            </div>
+        </div>
+
+        <center>
+             <hr />
+        </center>
+
+        <div class="row">
+            <div class="home-block col-lg-6">
+                <div class="title"> Visual Studio Integration </div>
+                You gain full access to the features in Visual Studio throughout the development lifecycle. Scalejs comes with Visual Studio templates to get you started with your development.
+                You can manage packages with NuGet easily, and also develop your own.
+                Building and Running your project is a breeze and does the work of starting up a web server and creating deployable packages for you.
+                Intellisense, a much beloved and useful feature, is provided for the entire scalejs API as well as code you write yourself.
+                Not to mention that if your application relies on a .NET backend, you do not need to maintain separate development environments and your team can code in one place.
+            </div>
+
+            <div class="home-block col-lg-6">
+                <div class="title"> Extensive </div>
+                Scalejs core will allow you to add extensions as needed, and everything you need is already there for you to use.
+                Most applications will make use of the MVVM pattern, state management, layout, and routing, so we've already created these extensions.
+                We also have developed various UI components such as grids, treemaps, and charts.
+            </div>
+        </div>
     </div>
 </body>
 </html>

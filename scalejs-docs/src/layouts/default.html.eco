@@ -89,6 +89,9 @@
                 <li><a href="./docs.html"><i class="icon-star-3"></i> Introduction </a></li>
                 <li class="title">Tutorials</li>
                 <li><a href="./quick-start.html">Quick Start Guide</a></li>
+                <li>
+                    <a href="./pjsonform.html">PJSON Form Tutorial</a>
+                </li>
             </ul>
         </div>
 
