@@ -3,8 +3,7 @@ title: "Quick Start Guide"
 isPage: true
 ---
 
-## Quick Start Guide
-
+# Quick Start Guide
 The easiest way to get a scalejs project up and running is to use the [yeoman generator](https://github.com/EikosPartners/generator-scalejs).
 
 ## Steps
