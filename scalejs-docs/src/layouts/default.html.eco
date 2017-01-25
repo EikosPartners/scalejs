@@ -4,8 +4,10 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+  <link rel="stylesheet" href="style/style.css" />
   <link rel="stylesheet" href="style/metro-bootstrap.min.css" />
   <link rel="stylesheet" href="style/metro-bootstrap-responsive.min.css" />
+  <link rel="stylesheet" href="https://eikospartners.github.io/scalejs-dev/build/app.css" />
   <script src="style/jquery.min.js"></script>
   <script src="style/jquery.ui.widget.js"></script>
   <script src="style/metro.min.js"></script>
@@ -15,37 +17,56 @@
   <%- @getBlock("styles").add(@document.styles).toHTML() %>
 
   <style>
-    header {
-      height: 45px;
-  }
-  #content {
-      overflow-y: scroll;
-      padding-right: 20px;
-      margin-left: 20px;
-  }
-  #sidebar {
-      display: block;
-      float: left;
-      width: 300px;
-      overflow-y: scroll;
-      margin-right:20px;
-  }
-  body {
-      overflow-y: hidden;
-  }
-  .metro h1 {
-    color: #9a1616 !important;
-}
-.metro .sidebar>ul ul, .metro .sidebar>ul ul li a {
-    background-color: #3d3d3d;
-    border: 0px;
-    color: #fff;
-}
+        header {
+            height: 45px;
+        }
+        #content {
+            overflow-y: scroll;
+            padding-right: 20px;
+            margin-left: 20px;
+        }
+        #sidebar {
+            display: block;
+            float: left;
+            width: 300px;
+            overflow-y: scroll;
+            margin-right:20px;
+        }
+        body {
+            overflow-y: hidden;
+        }
+        .metro h1 {
+            color: #9a1616 !important;
+        }
 
-.metro h2, .metro h3 {
-    margin: 30px 0 15px 0;
-}
-</style>
+        .metro .sidebar>ul ul, .metro .sidebar>ul ul li a {
+            background-color: #3d3d3d;
+            border: 0px;
+            color: #fff;
+        }
+
+        .metro h2, .metro h3 {
+            margin: 30px 0 15px 0;
+        }
+
+        code {
+            background-color: #191919 !important;
+            color: #87b6ff !important;
+            line-height: 120% !important;
+            border-radius: 6px;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 11pt;
+            letter-spacing: .02em;
+            font-family: 'Courier New',monospace;
+            display: inline-block;
+            padding: 3px 5px;
+            margin: 0;
+            color: #e51400;
+            border: 1px #d4d4d4 solid;
+        }
+
+  </style>
 
 <script>
     function adjustHeight() {
@@ -75,14 +96,13 @@
 
 </script>
 </head>
-<body class="metro">
+<body>
 
-    <header>
+    <header class="metro">
         <%- @include('nav.html') %>
     </header>
 
-    <div id="container">
-
+    <div id="container" class="metro">
         <div id="sidebar" class="sidebar no-tablet-portrait no-phone">
             <ul>
                 <li class="title">Getting Started</li>

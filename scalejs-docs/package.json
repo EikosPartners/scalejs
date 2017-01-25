@@ -8,9 +8,10 @@
   },
   "dependencies": {
     "docpad": ">=6.64.0",
-    "docpad-plugin-marked": ">=2.2.0",
+    "docpad-plugin-eco": ">=2.1.0",
     "docpad-plugin-highlightjs": ">=2.2.1",
-    "docpad-plugin-eco": ">=2.1.0"
+    "docpad-plugin-marked": ">=2.2.0",
+    "scalejs-dev": "^1.0.0"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {

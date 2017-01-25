@@ -92,10 +92,12 @@
 
 	</style>
 </head>
-<body class="metro">
-    <%- @include('nav.html') %>
+<body>
+    <div class="metro">
+        <%- @include('nav.html') %>
+    </div>
 
-	<div id="callout">
+	<div id="callout" class="metro">
 		<p id="callout-text" class="fg-white header">scalejs</p>
 		<div style="height:10px"></div>
 		<p id="callout-subtext" class="fg-white">
@@ -108,7 +110,7 @@
         </div>
 	</div>
 
-	<div class="content">
+	<div class="metro content">
         <div class="row">
             <div class="home-block col-lg-4">
                 <div class="title"> Extendable </div>
@@ -153,6 +155,5 @@
                 We also have developed various UI components such as grids, treemaps, and charts.
             </div>
         </div>
-    </div>
 </body>
 </html>

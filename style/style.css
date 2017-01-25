@@ -1,0 +1,51 @@
+.metro section.ace_editor div, .metro section.ace_editor span {
+    font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace !important;
+    font-weight: initial !important;
+    font-style: initial !important;
+}
+
+.editor-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.container-xs {
+    height: 100px;
+}
+
+.container-small {
+    height: 200px;
+}
+
+.container-medium {
+    height: 400px;
+}
+
+.container-large {
+    height: 500px;
+}
+
+.container-xl {
+    height: 750px;
+}
+
+.editor {
+    width: calc(50% - 5px);
+    border-radius: 4px;
+}
+
+.output {
+    width: calc(50% - 5px);
+    padding-left: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 100%;
+    background-color: #F2F2F2;
+}
+
+.ace_editor {
+    height: 200px;
+}
