@@ -25,10 +25,10 @@
     line-height: 120% !important;
 }
 .javascript .hljs-string {
-    color: #739D52;
+    color: #a6e22e;
 }
 .javascript .hljs-keyword {
-    color: #CDA851;
+    color: #e6b93b;
 }
 .javascript .hljs-literal {
     color: white;
