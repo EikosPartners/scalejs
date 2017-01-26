@@ -242,6 +242,47 @@ isPage: true
         "outputClasses": "output"
     };
 
+    var editorJSONStep8JS = {
+        "type": "editor",
+        "id": "editorJSONStep8JS",
+        "value": [
+            "/* GET colors */",
+            "app.get('/colors', (req, res, next) => {",
+            "   res.send({",
+            "       data: [",
+            "           {",
+            "               value: 0,",
+            "               text: 'Red'",
+            "           },",
+            "           {",
+            "               value: 1,",
+            "               text: 'Orange'",
+            "           },",
+            "           {",
+            "               value: 2,",
+            "               text: 'Yellow'",
+            "           },",
+            "           {",
+            "               value: 3,",
+            "               text: 'Green'",
+            "           },",
+            "           {",
+            "               value: 4,",
+            "               text: 'Blue'",
+            "           },",
+            "           {",
+            "               value: 5,",
+            "               text: 'Purple'",
+            "           }",
+            "       ]",
+            "   });",
+            "});"
+        ],
+        "output": false,
+        "mode": "javascript",
+        "classes": "editor-full"
+    };
+
     var editorJSONStep9 = {
         "type": "editor",
         "id": "editorJSONStep9",
@@ -327,6 +368,47 @@ isPage: true
         "output": true,
         "classes": "editor",
         "outputClasses": "output"
+    };
+
+    var editorJSONStep9JS = {
+        "type": "editor",
+        "id": "editorJSONStep9JS",
+        "value": [
+            "/* GET Things */",
+            "app.get('/things', (req, res, next) => {",
+            "   res.send({",
+            "       data: [",
+            "           {",
+            "               color: 0,",
+            "               text: 'Apples'",
+            "           },",
+            "           {",
+            "               color: 0,",
+            "               text: 'Fire Trucks'",
+            "           },",
+            "           {",
+            "               color: 1,",
+            "               text: 'Oranges'",
+            "           },",
+            "           {",
+            "               color: 4,",
+            "               text: 'Sky'",
+            "           },",
+            "           {",
+            "               color: 4,",
+            "               text: 'Oceans'",
+            "           },",
+            "           {",
+            "               color: 4,",
+            "               text: 'BlueBerry'",
+            "           }",
+            "       ]",
+            "   });",
+            "});"
+        ],
+        "output": false,
+        "mode": "javascript",
+        "classes": "editor-full"
     };
 
     var editorJSONStep10 = {
@@ -725,6 +807,30 @@ isPage: true
         "classes": "editor",
         "outputClasses": "output"
     };
+
+    var editorJSONStep12JS = {
+        "type": "editor",
+        "id": "editorJSONStep12JS",
+        "value": [
+            "/* GET/POST form data */",
+            "",
+            "let formData = null;",
+            "",
+            "app.get('/form', (req, res, next) => {",
+            "   res.send(formData);",
+            "});",
+            "",
+            "app.post('/form', (req, res, next) => {",
+            "   formData = req.body;",
+            "   res.send({",
+            "       success: true",
+            "   });",
+            "});"
+        ],
+        "output": false,
+        "mode": "javascript",
+        "classes": "editor-full"
+    };
 </script>
 
 
@@ -877,39 +983,7 @@ Now we will add an extra step to get these values from a REST call.
 
 In order to do this, I will add a simple endpoint to our mock backend to retrieve the values:
 
-```JavaScript
-/* GET Colors */
-app.get('/colors', (req, res, next) => {
-    res.send({
-        data: [
-            {
-                value: 0,
-                text: 'Red'
-            },
-            {
-                value: 1,
-                text: 'Orange'
-            },
-            {
-                value: 2,
-                text: 'Yellow'
-            },
-            {
-                value: 3,
-                text: 'Green'
-            },
-            {
-                value: 4,
-                text: 'Blue'
-            },
-            {
-                value: 5,
-                text: 'Purple'
-            }
-        ]
-    })
-});
-```
+<div class="editor-container container-large" data-bind="metadataFactory: editorJSONStep8JS"></div>
 
 After a server restart and I have verified this data is coming in as desired, now I will add a store to our PJSON
 and hook the Select source into this.
@@ -958,39 +1032,7 @@ of a select dropdown's `fromArray` field and get a chance to use lodash in our e
 In order to do this we will filter a second select based upon what was selected in the first one.
 Add a new REST endpoint for this new data source (requires server restart):
 
-```JavaScript
-/* GET Things */
-app.get('/things', (req, res, next) => {
-    res.send({
-        data: [
-            {
-                color: 0,
-                text: 'Apples'
-            },
-            {
-                color: 0,
-                text: 'Fire Trucks'
-            },
-            {
-                color: 1,
-                text: 'Oranges'
-            },
-            {
-                color: 4,
-                text: 'Sky'
-            },
-            {
-                color: 4,
-                text: 'Oceans'
-            },
-            {
-                color: 4,
-                text: 'BlueBerry'
-            }
-        ]
-    })
-});
-```
+<div class="editor-container container-large" data-bind="metadataFactory: editorJSONStep9JS"></div>
 
 When the user selects "blue" they will only be able to select things which are blue.
 
@@ -1072,23 +1114,7 @@ To retrieve the form data, first let us add some endpoints to our backend to sup
 Since we are not overly fancy here there is just a single endpoint to take the data and store it in a variable,
 and another endpoint to retrieve it.
 
-```JavaScript
-/* GET/POST form data */
-
-let formData = null;
-
-app.get('/form', (req, res, next) => {
-    res.send(formData);
-});
-
-app.post('/form', (req, res, next) => {
-    formData = req.body;
-    res.send({
-        success: true
-    })
-});
-
-```
+<div class="editor-container container-small" data-bind="metadataFactory: editorJSONStep12JS"></div>
 
 After a server restart, the POST call from before should persist the data,
 which you can double-check by hitting the form GET endpoint.
