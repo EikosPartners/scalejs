@@ -7,20 +7,20 @@ isPage: true
     var editorJSONStep2 = {
         "type": "editor",
         "id": "editorJSONStep2",
-        "initialValue": {
+        "value": {
             "type": "adapter",
             "children": [
 
             ]
         },
         "output": "false",
-        "classes": "editor"
+        "classes": "editor-full"
     };
 
     var editorJSONStep3 = {
         "type": "editor",
         "id": "editorJSONStep3",
-        "initialValue": {
+        "value": {
             "type": "adapter",
             "children": [
                 {            
@@ -39,7 +39,7 @@ isPage: true
     var editorJSONStep4 = {
         "type": "editor",
         "id": "editorJSONStep4",
-        "initialValue": {
+        "value": {
             "type": "adapter",
             "children": [
                 {            
@@ -64,7 +64,7 @@ isPage: true
     var editorJSONStep5 = {
         "type": "editor",
         "id": "editorJSONStep5",
-        "initialValue": {
+        "value": {
             "type": "adapter",
             "children": [
                 {            
@@ -94,7 +94,7 @@ isPage: true
     var editorJSONStep6 = {
         "type": "editor",
         "id": "editorJSONStep6",
-        "initialValue": {
+        "value": {
                 "type": "adapter",
                 "children": [
                     {            
@@ -131,7 +131,7 @@ isPage: true
     var editorJSONStep7 = {
         "type": "editor",
         "id": "editorJSONStep7",
-        "initialValue": {
+        "value": {
             "type": "adapter",
             "children": [
                 {            
@@ -177,13 +177,13 @@ isPage: true
             ]
         },
         "output": false,
-        "classes": "editor"
+        "classes": "editor-full"
     };
 
     var editorJSONStep8 = {
         "type": "editor",
         "id": "editorJSONStep8",
-        "initialValue": {
+        "value": {
             "type": "adapter",
             "children": [
                 {
@@ -245,7 +245,7 @@ isPage: true
     var editorJSONStep9 = {
         "type": "editor",
         "id": "editorJSONStep9",
-        "initialValue": {
+        "value": {
             "type": "adapter",
             "children": [
                 {
@@ -332,7 +332,7 @@ isPage: true
     var editorJSONStep10 = {
         "type": "editor",
         "id": "editorJSONStep10",
-        "initialValue": {
+        "value": {
             "type": "adapter",
             "children": [
                 {
@@ -438,7 +438,7 @@ isPage: true
     var editorJSONStep11Part1 = {
         "type": "editor",
         "id": "editorJSONStep11Part1",
-        "initialValue": {
+        "value": {
             "type": "adapter",
             "id": "basicForm",
             "children": [
@@ -448,13 +448,13 @@ isPage: true
             ]
         },
         "output": false,
-        "classes": "editor"
+        "classes": "editor-full"
     };
 
     var editorJSONStep11Part2 = {
         "type": "editor",
         "id": "editorJSONStep11Part2",
-        "initialValue": {
+        "value": {
             "type": "action",
             "actionType": "ajax",
             "text": "Save",
@@ -468,13 +468,13 @@ isPage: true
             }
         },
         "output": false,
-        "classes": "editor"
+        "classes": "editor-full"
     };
 
     var editorJSONStep11Part3 = {
         "type": "editor",
         "id": "editorJSONStep11Part3",
-        "initialValue": {
+        "value": {
             "type": "adapter",
             "id": "basicForm",
             "children": [
@@ -597,7 +597,7 @@ isPage: true
     var editorJSONStep12 = {
         "type": "editor",
         "id": "editorJSONStep12",
-        "initialValue": {
+        "value": {
             "type": "adapter",
             "id": "basicForm",
             "dataSourceEndpoint": {
