@@ -17,7 +17,7 @@
   
 
   <style>
-        header {
+        .header {
             height: 45px;
         }
         #content {
@@ -107,7 +107,7 @@
 </head>
 <body>
 
-    <header class="metro">
+    <header class="metro header">
         <nav class="navigation-bar dark fixed-top">
     <div class="navigation-bar-content">
         <a href="./" class="element"><span class="icon-home"></span> SCALEJS</a>
@@ -183,7 +183,7 @@
 
             ]
         },
-        "output": "false",
+        "output": false,
         "classes": "editor-full"
     };
 
@@ -1040,7 +1040,7 @@ module allows for tracking of the other components which will be necessary to ga
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">import</span> <span class="hljs-string">'scalejs.metadatafactory-common/dist/adapter/adapterModule'</span>;
 </code></pre>
 <p>Now in your JSON file you will add the adapter:</p>
-<div class="editor-container container-xs" data-bind="metadataFactory: editorJSONStep2"></div>
+<div class="container-xs" data-bind="metadataFactory: editorJSONStep2"></div>
 
 <h2 id="3-add-an-input">3. Add an Input</h2>
 <p>The <a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-input.html">input</a>

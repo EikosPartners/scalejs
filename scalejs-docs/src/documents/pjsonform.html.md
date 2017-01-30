@@ -13,7 +13,7 @@ isPage: true
 
             ]
         },
-        "output": "false",
+        "output": false,
         "classes": "editor-full"
     };
 
@@ -883,7 +883,7 @@ import 'scalejs.metadatafactory-common/dist/adapter/adapterModule';
 
 Now in your JSON file you will add the adapter:
 
-<div class="editor-container container-xs" data-bind="metadataFactory: editorJSONStep2"></div>
+<div class="container-xs" data-bind="metadataFactory: editorJSONStep2"></div>
 
 ## 3. Add an Input
 

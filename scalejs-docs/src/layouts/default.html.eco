@@ -17,7 +17,7 @@
   <%- @getBlock("styles").add(@document.styles).toHTML() %>
 
   <style>
-        header {
+        .header {
             height: 45px;
         }
         #content {
@@ -107,7 +107,7 @@
 </head>
 <body>
 
-    <header class="metro">
+    <header class="metro header">
         <%- @include('nav.html') %>
     </header>
 
