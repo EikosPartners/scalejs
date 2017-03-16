@@ -329,47 +329,84 @@
             "type": "action",
             "text": "Popup",
             "actionType": "popup",
-                "options": {
-                    "title": "Success",
-                    "template": "action_popup_template",
-                    "message": "Your form has been submitted successfully"
-                }
+            "options": {
+                "title": "Success",
+                "template": "action_popup_template",
+                "message": "Your form has been submitted successfully"
+            }
         },
         "output": true,
         "classes": "editor",
         "outputClasses": "output"
     };
+
+    var closePopupJson = {
+        "type": "editor",
+        "id": "closePopupJson",
+        "value": {
+            "type": "action",
+            "text": "Close Popup",
+            "actionType": "closePopup"
+        },
+        "output": true,
+        "classes": "editor",
+        "outputClasses": "output"
+    }
 </script>
 
 <h1 id="how-to-use-pjson-actions">How to use PJSON Actions</h1>
 <p>The Action component is what you can use to bring your application to life. From ajax calls, events, routing and popups, Action is one standardized way of creating interactivity in the app.</p>
 <p>You should already have an application with a Scalejs/PJSON set up, if not visit the <a href="https://eikospartners.github.io/scalejs/quick-start.html">quick start guide.</a></p>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-action.html">PJSON Action</a></li>
+<li><a href="https://github.com/EikosPartners/scalejs.metadataFactory-common/tree/master/src/action">Source Code</a></li>
+</ul>
 <h2 id="available-pjson-actions">Available PJSON Actions</h2>
 <ul>
-<li>Ajax</li>
-<li>Event</li>
-<li>Redirect</li>
-<li>Route</li>
-<li>Series</li>
-<li>Popup</li>
+<li><a href="#ajax">Ajax</a></li>
+<li><a href="#event">Event</a></li>
+<li><a href="#redirect">Redirect</a></li>
+<li><a href="#route">Route</a></li>
+<li><a href="#series">Series</a></li>
+<li><a href="#popup">Popup</a></li>
+<li><a href="#close_popup">Close Popup</a></li>
 </ul>
+<div id="ajax"></div>
+
 <h2 id="-ajax-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-ajax-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-ajax.html">Ajax</a></h2>
 <div class="editor-container container-small" data-bind="metadataFactory: ajaxJson"></div>
+
+<div id="event"></div>
 
 <h2 id="-event-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-event-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-event.html">Event</a></h2>
 <div class="editor-container container-small" data-bind="metadataFactory: eventJson"></div>
 
+<div id="redirect"></div>
+
 <h2 id="-redirect-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-redirect-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-redirect.html">Redirect</a></h2>
 <div class="editor-container container-small" data-bind="metadataFactory: redirectJson"></div>
+
+<div id="route"></div>
 
 <h2 id="-route-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-route-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-route.html">Route</a></h2>
 <div class="editor-container container-small" data-bind="metadataFactory: routeJson"></div>
 
+<div id="series"></div>
+
 <h2 id="-series-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-series-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-series.html">Series</a></h2>
 <div class="editor-coontainer container-large" data-bind="metadataFactory: seriesJson"></div>
 
+<div id="popup"></div>
+
 <h2 id="-popup-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-popup-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-popup.html">Popup</a></h2>
-<p><div class="editor-container container-small" data-bind="metadataFactory: popupJson"></div></p>
+<div class="editor-container container-small" data-bind="metadataFactory: popupJson"></div>
+
+<div id="close_popup"></div>
+
+<h2 id="-close-popup-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-popup-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-popup.html">Close Popup</a></h2>
+<div class="editor-container container-xs" data-bind="metadataFactory: closePopupJson"></div>
+
 <script src="https://eikospartners.github.io/scalejs-dev/build/app.bundle.js"></script>
         </div>
 
