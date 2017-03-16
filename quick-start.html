@@ -86,6 +86,10 @@
             background-color: yellow;
         }
 
+        .hidden {
+            display: none;
+        }
+
   </style>
 
 <script>
@@ -97,6 +101,8 @@
 
     $(document).ready(function() {
         var path = window.location.pathname.replace("/scalejs/scalejs-docs/out","");
+
+        var initialSidebarWidth = $('#sidebar').width();
 
         //make selected page active on sidebar
         $("a[href='." + path +"']").parent().addClass("active");
@@ -112,6 +118,23 @@
         console.log(path);
         //expand grid if it is grid
         if(path === '/grid1.html' || path === '/grid2.html' || path=='/grid3.html') $('#grid-dropdown').css("display","block");
+
+        $('#sidebar-close').click(function() {
+            $('#sidebar').animate({width: "40px"}, {duration: 400});
+            $('#sidebar > ul').addClass('hidden');
+
+            $('#sidebar-open').removeClass('hidden');
+            $('#sidebar-close').addClass('hidden');
+        });
+
+        $('#sidebar-open').click(function () {
+            $('#sidebar').animate({width: initialSidebarWidth}, 400, function () {
+                $('#sidebar > ul').removeClass('hidden');
+
+                $('#sidebar-close').removeClass('hidden');
+                $('#sidebar-open').addClass('hidden');
+            });
+        });
     });
 
 </script>
@@ -171,6 +194,8 @@
 
     <div id="container" class="metro">
         <div id="sidebar" class="sidebar no-tablet-portrait no-phone">
+            <button id="sidebar-close"><i class="icon-minus"></i></button>
+            <button id="sidebar-open" class="hidden"><i class="icon-plus"></i></button>
             <ul>
                 <li class="title">Getting Started</li>
                 <li><a href="./quick-start.html"><i class="icon-new"></i>Project Template Generator</a></li>

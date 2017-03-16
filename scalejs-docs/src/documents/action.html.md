@@ -135,7 +135,7 @@ isPage: true
 
 # How to use PJSON Actions
 
-Using PJSON actions simplifies site navigation and exposes powerful tools for developers.
+The Action component is what you can use to bring your application to life. From ajax calls, events, routing and popups, Action is one standardized way of creating interactivity in the app.
 
 You should already have an application with a Scalejs/PJSON set up, if not visit the [quick start guide.](https://eikospartners.github.io/scalejs/quick-start.html)
 
