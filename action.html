@@ -104,6 +104,23 @@
         $("#sidebar").outerHeight(window.innerHeight -45);
     }
 
+    function close() {
+        $('#sidebar').animate({width: "40px"}, {duration: 400});
+        $('#sidebar > ul').addClass('hidden');
+
+        $('#sidebar-open').removeClass('hidden');
+        $('#sidebar-close').addClass('hidden');
+    }
+
+    function open(initialSidebarWidth) {
+        $('#sidebar').animate({width: initialSidebarWidth}, 400, function () {
+            $('#sidebar > ul').removeClass('hidden');
+
+            $('#sidebar-close').removeClass('hidden');
+            $('#sidebar-open').addClass('hidden');
+        });
+    }
+
     $(document).ready(function() {
         var path = window.location.pathname.replace("/scalejs/scalejs-docs/out","");
 
@@ -124,21 +141,10 @@
         //expand grid if it is grid
         if(path === '/grid1.html' || path === '/grid2.html' || path=='/grid3.html') $('#grid-dropdown').css("display","block");
 
-        $('#sidebar-close').click(function() {
-            $('#sidebar').animate({width: "40px"}, {duration: 400});
-            $('#sidebar > ul').addClass('hidden');
-
-            $('#sidebar-open').removeClass('hidden');
-            $('#sidebar-close').addClass('hidden');
-        });
+        $('#sidebar-close').click(close);
 
         $('#sidebar-open').click(function () {
-            $('#sidebar').animate({width: initialSidebarWidth}, 400, function () {
-                $('#sidebar > ul').removeClass('hidden');
-
-                $('#sidebar-close').removeClass('hidden');
-                $('#sidebar-open').addClass('hidden');
-            });
+            open(initialSidebarWidth);
         });
     });
 
@@ -614,11 +620,12 @@
 <li><a href="#popup">Popup</a></li>
 <li><a href="#close_popup">Close Popup</a></li>
 </ul>
+<p>You can view the source code of each action in the developer&#39;s console and the file names can be found in the header of the action&#39;s section.</p>
 <hr>
 
 <div id="ajax"></div>
 
-<h2 id="-ajax-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-ajax-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-ajax.html">Ajax</a></h2>
+<h2 id="-ajax-ajax-js-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-ajax-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-ajax.html">Ajax (ajax.js)</a></h2>
 <h3 id="__simple-request__"><strong>Simple Request</strong></h3>
 <p>This is an example of a very simple ajax action that makes a GET request to the store route.</p>
 <div class="editor-container container-small" data-bind="metadataFactory: ajaxJson"></div>
@@ -645,32 +652,38 @@ Simply add an entry to the list and the request will be made with the id from th
 
 <div id="event"></div>
 
-<h2 id="-event-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-event-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-event.html">Event</a></h2>
+<h2 id="-event-event-js-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-event-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-event.html">Event (event.js)</a></h2>
+<p>The event action will notify all subscribers of the provided channel in <code>options.target</code> via <a href="https://github.com/EikosPartners/scalejs.messageBus">scalejs.messageBus</a>.</p>
 <div class="editor-container container-small" data-bind="metadataFactory: eventJson"></div>
 
 <div id="redirect"></div>
 
-<h2 id="-redirect-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-redirect-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-redirect.html">Redirect</a></h2>
+<h2 id="-redirect-redirect-js-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-redirect-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-redirect.html">Redirect (redirect.js)</a></h2>
+<p>Redirect is a simple action that will redirect to the provided target.</p>
 <div class="editor-container container-small" data-bind="metadataFactory: redirectJson"></div>
 
 <div id="route"></div>
 
-<h2 id="-route-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-route-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-route.html">Route</a></h2>
+<h2 id="-route-route-js-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-route-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-route.html">Route (route.js)</a></h2>
+<p>The route action provides an easy way navigate around your web application.</p>
 <div class="editor-container container-small" data-bind="metadataFactory: routeJson"></div>
 
 <div id="series"></div>
 
-<h2 id="-series-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-series-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-series.html">Series</a></h2>
+<h2 id="-series-series-js-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-series-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-series.html">Series (series.js)</a></h2>
+<p>The series action is exactly as it sounds; supply an array to <code>options.actions</code> and they will be executed synchronously.</p>
 <div class="editor-container container-large" data-bind="metadataFactory: seriesJson"></div>
 
 <div id="popup"></div>
 
-<h2 id="-popup-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-popup-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-popup.html">Popup</a></h2>
+<h2 id="-popup-popup-js-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-popup-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-popup.html">Popup (popup.js)</a></h2>
+<p>The popup action provides developers with an easy way to create popups. A custom template can be used to create both simple and complex popups by using <code>options.template</code>.</p>
 <div class="editor-container container-small" data-bind="metadataFactory: popupJson"></div>
 
 <div id="close_popup"></div>
 
-<h2 id="-close-popup-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-popup-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-popup.html">Close Popup</a></h2>
+<h2 id="-close-popup-popup-js-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-popup-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-popup.html">Close Popup (popup.js)</a></h2>
+<p>The close popup action can be used to close a popup.</p>
 <div class="editor-container container-xs" data-bind="metadataFactory: closePopupJson"></div>
 
 <script src="https://eikospartners.github.io/scalejs-dev/build/app.bundle.js"></script>

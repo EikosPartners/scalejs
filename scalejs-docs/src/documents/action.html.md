@@ -402,11 +402,13 @@ You should already have an application with a Scalejs/PJSON set up, if not visit
 * [Popup](#popup)
 * [Close Popup](#close_popup)
 
+You can view the source code of each action in the developer's console and the file names can be found in the header of the action's section.
+
 <hr>
 
 <div id="ajax"></div>
 
-## [Ajax](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-ajax.html)
+## [Ajax (ajax.js)](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-ajax.html)
 
 ### __Simple Request__
 This is an example of a very simple ajax action that makes a GET request to the store route.
@@ -435,32 +437,38 @@ To see what happens when an error occurs in the ajax request, try changing the u
 
 <div id="event"></div>
 
-## [Event](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-event.html)
+## [Event (event.js)](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-event.html)
+The event action will notify all subscribers of the provided channel in `options.target` via [scalejs.messageBus](https://github.com/EikosPartners/scalejs.messageBus).
 <div class="editor-container container-small" data-bind="metadataFactory: eventJson"></div>
 
 <div id="redirect"></div>
 
-## [Redirect](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-redirect.html)
+## [Redirect (redirect.js)](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-redirect.html)
+Redirect is a simple action that will redirect to the provided target.
 <div class="editor-container container-small" data-bind="metadataFactory: redirectJson"></div>
 
 <div id="route"></div>
 
-## [Route](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-route.html)
+## [Route (route.js)](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-route.html)
+The route action provides an easy way navigate around your web application.
 <div class="editor-container container-small" data-bind="metadataFactory: routeJson"></div>
 
 <div id="series"></div>
 
-## [Series](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-series.html)
+## [Series (series.js)](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-series.html)
+The series action is exactly as it sounds; supply an array to `options.actions` and they will be executed synchronously.
 <div class="editor-container container-large" data-bind="metadataFactory: seriesJson"></div>
 
 <div id="popup"></div>
 
-## [Popup](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-popup.html)
+## [Popup (popup.js)](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-popup.html)
+The popup action provides developers with an easy way to create popups. A custom template can be used to create both simple and complex popups by using `options.template`.
 <div class="editor-container container-small" data-bind="metadataFactory: popupJson"></div>
 
 <div id="close_popup"></div>
 
-## [Close Popup](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-popup.html)
+## [Close Popup (popup.js)](https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-popup.html)
+The close popup action can be used to close a popup.
 <div class="editor-container container-xs" data-bind="metadataFactory: closePopupJson"></div>
 
 <script src="https://eikospartners.github.io/scalejs-dev/build/app.bundle.js"></script>

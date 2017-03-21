@@ -104,6 +104,23 @@
         $("#sidebar").outerHeight(window.innerHeight -45);
     }
 
+    function close() {
+        $('#sidebar').animate({width: "40px"}, {duration: 400});
+        $('#sidebar > ul').addClass('hidden');
+
+        $('#sidebar-open').removeClass('hidden');
+        $('#sidebar-close').addClass('hidden');
+    }
+
+    function open(initialSidebarWidth) {
+        $('#sidebar').animate({width: initialSidebarWidth}, 400, function () {
+            $('#sidebar > ul').removeClass('hidden');
+
+            $('#sidebar-close').removeClass('hidden');
+            $('#sidebar-open').addClass('hidden');
+        });
+    }
+
     $(document).ready(function() {
         var path = window.location.pathname.replace("/scalejs/scalejs-docs/out","");
 
@@ -124,21 +141,10 @@
         //expand grid if it is grid
         if(path === '/grid1.html' || path === '/grid2.html' || path=='/grid3.html') $('#grid-dropdown').css("display","block");
 
-        $('#sidebar-close').click(function() {
-            $('#sidebar').animate({width: "40px"}, {duration: 400});
-            $('#sidebar > ul').addClass('hidden');
-
-            $('#sidebar-open').removeClass('hidden');
-            $('#sidebar-close').addClass('hidden');
-        });
+        $('#sidebar-close').click(close);
 
         $('#sidebar-open').click(function () {
-            $('#sidebar').animate({width: initialSidebarWidth}, 400, function () {
-                $('#sidebar > ul').removeClass('hidden');
-
-                $('#sidebar-close').removeClass('hidden');
-                $('#sidebar-open').addClass('hidden');
-            });
+            open(initialSidebarWidth);
         });
     });
 
