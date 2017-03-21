@@ -90,6 +90,11 @@
             display: none;
         }
 
+        .metro hr {
+            height: 1px;
+            background-color: black;
+        }
+
   </style>
 
 <script>
@@ -221,8 +226,245 @@
             "text": "SUBMIT",
             "options": {
                 "target": {
-                    "uri": "dashboard",
+                    "uri": "store",
                 }
+            }
+        },
+        "output": true,
+        "classes": "editor",
+        "outputClasses": "output"
+    };
+
+    var ajaxMustache = {
+        "type": "editor",
+        "id": "ajaxMustache",
+        "value": {
+            "type": "adapter",
+            "id": "dashboardAdapter",
+            "dataSourceEndpoint": {
+                "target": {
+                    "uri": "stores"
+                },
+                "keyMap": {
+                    "dataKey": "stores"
+                }
+            },
+            "children": [
+                {
+                    "type": "listAdvanced",
+                    "id": "stores",
+                    "list": {
+                        "type": "list",
+                        "label": "Stores",
+                        "classes": "list-advanced",
+                        "options": {
+                            "subscribeToData": true
+                        },
+                        "items": [
+                            {
+                                "id": "id",
+                                "label": "ID",
+                                "type": "input",
+                                "inputType": "text"
+                            },
+                            {
+                                "id": "name",
+                                "label": "NAME",
+                                "type": "input",
+                                "inputType": "text"
+                            },
+                            {
+                                "type": "action",
+                                "actionType": "ajax",
+                                "text": "Submit",
+                                "classes": "center",
+                                "options": {
+                                    "target": {
+                                        "uri": "example/{{id}}",
+                                        "options": {
+                                            "type": "POST"
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "output": true,
+        "classes": "editor",
+        "outputClasses": "output"
+    };
+
+    var ajaxParams = {
+        "type": "editor",
+        "id": "editorJson",
+        "value": {
+            "type": "adapter",
+            "id": "dashboardAdapter",
+            "dataSourceEndpoint": {
+                "target": {
+                    "uri": "stores"
+                },
+                "keyMap": {
+                    "dataKey": "stores"
+                }
+            },
+            "children": [
+                {
+                    "type": "listAdvanced",
+                    "id": "stores",
+                    "list": {
+                        "type": "list",
+                        "label": "Stores",
+                        "classes": "list-advanced",
+                        "options": {
+                            "subscribeToData": true
+                        },
+                        "items": [
+                            {
+                                "id": "id",
+                                "label": "ID",
+                                "type": "input",
+                                "inputType": "text"
+                            },
+                            {
+                                "id": "name",
+                                "label": "NAME",
+                                "type": "input",
+                                "inputType": "text"
+                            },
+                            {
+                                "type": "action",
+                                "actionType": "ajax",
+                                "text": "Submit",
+                                "classes": "center",
+                                "options": {
+                                    "target": {
+                                        "uri": "example",
+                                        "options": {
+                                            "type": "POST"
+                                        }
+                                    },
+                                    "params": {
+                                        "name": "{{name}}"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "output": true,
+        "classes": "editor",
+        "outputClasses": "output"
+    };
+
+    var ajaxInputs = {
+        "type": "editor",
+        "id": "ajaxInputs",
+        "value": {
+            "type": "adapter",
+            "id": "dashboardAdapter",
+            "dataSourceEndpoint": {
+                "target": {
+                    "uri": "stores"
+                },
+                "keyMap": {
+                    "dataKey": "stores"
+                }
+            },
+            "children": [
+                {
+                    "type": "listAdvanced",
+                    "id": "stores",
+                    "list": {
+                        "type": "list",
+                        "label": "Stores",
+                        "classes": "list-advanced",
+                        "options": {
+                            "subscribeToData": true
+                        },
+                        "items": [
+                            {
+                                "id": "id",
+                                "label": "ID",
+                                "type": "input",
+                                "inputType": "text"
+                            },
+                            {
+                                "id": "name",
+                                "label": "NAME",
+                                "type": "input",
+                                "inputType": "text"
+                            },
+                            {
+                                "id": "location",
+                                "label": "LOCATION",
+                                "type": "input",
+                                "inputType": "text"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "action",
+                    "actionType": "ajax",
+                    "text": "Submit",
+                    "classes": "center",
+                    "options": {
+                        "target": {
+                            "uri": "example",
+                            "options": {
+                                "type": "POST"
+                            }
+                        }
+                    }
+                }
+            ]
+        },
+        "output": true,
+        "classes": "editor",
+        "outputClasses": "output"
+    };
+
+    var nextErrorActions = {
+        "type": "editor",
+        "id": "nextErrorActions",
+        "value": {
+            "type": "action",
+            "actionType": "ajax",
+            "text": "SUBMIT",
+            "options": {
+                "target": {
+                    "uri": "colors",
+                },
+                "nextActions": [
+                    {
+                        "type": "action",
+                        "actionType": "popup",
+                        "options": {
+                            "title": "Success!",
+                            "template": "action_popup_template",
+                            "message": "This is a popup in the next action of an ajax request!",
+                            "hideDelay": 2000
+                        }
+                    }
+                ],
+                "errorActions": [
+                    {
+                        "type": "action",
+                        "actionType": "popup",
+                        "options": {
+                            "title": "Error!",
+                            "template": "action_popup_template",
+                            "message": "This is a popup in the error action of an ajax request",
+                            "hideDelay": 2000
+                        }
+                    }
+                ]
             }
         },
         "output": true,
@@ -232,7 +474,7 @@
 
     var eventJson = {
         "type": "editor",
-        "id": "editorJson",
+        "id": "eventJson",
         "value": {
             "type": "action",
             "actionType": "event",
@@ -372,10 +614,34 @@
 <li><a href="#popup">Popup</a></li>
 <li><a href="#close_popup">Close Popup</a></li>
 </ul>
+<hr>
+
 <div id="ajax"></div>
 
 <h2 id="-ajax-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-ajax-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-ajax.html">Ajax</a></h2>
+<h3 id="__simple-request__"><strong>Simple Request</strong></h3>
+<p>This is an example of a very simple ajax action that makes a GET request to the store route.</p>
 <div class="editor-container container-small" data-bind="metadataFactory: ajaxJson"></div>
+
+<h3 id="__uri-rendering__"><strong>URI Rendering</strong></h3>
+<p>This example shows how to create an ajax action with a dynamic uri that will be mustache rendered using the data in its context.
+Simply add an entry to the list and the request will be made with the id from the row.</p>
+<div class="editor-container container-large" data-bind="metadataFactory: ajaxMustache"></div>
+
+<h3 id="__params-rendering__"><strong>Params Rendering</strong></h3>
+<p>This example is similar to the previous, except this ajax action will render the data in the row based on the params key.</p>
+<div class="editor-container container-large" data-bind="metadataFactory: ajaxParams"></div>
+
+<h3 id="__sending-a-registered-input__"><strong>Sending a registered input</strong></h3>
+<p>In this example an ajax action is created that will send all of the data that is in its context. The data will come from the inputs in the adapter.</p>
+<div class="editor-container container-large" data-bind="metadataFactory: ajaxInputs"></div>
+
+<h3 id="__using-next-error-actions__"><strong>Using Next/Error Actions</strong></h3>
+<p>Ajax actions provide a very useful feature with next and error actions. Simply supply an array of actions to <code>nextActions</code> and/or <code>errorActions</code> and these actions will run on success and error respectively.</p>
+<p>To see what happens when an error occurs in the ajax request, try changing the uri to something else!</p>
+<div class="editor-container container-large" data-bind="metadataFactory: nextErrorActions"></div>
+
+<hr>
 
 <div id="event"></div>
 
@@ -395,7 +661,7 @@
 <div id="series"></div>
 
 <h2 id="-series-https-eikospartners-github-io-scalejs-metadatafactory-common-doc-module-series-html-"><a href="https://eikospartners.github.io/scalejs.metadataFactory-common/doc/module-series.html">Series</a></h2>
-<div class="editor-coontainer container-large" data-bind="metadataFactory: seriesJson"></div>
+<div class="editor-container container-large" data-bind="metadataFactory: seriesJson"></div>
 
 <div id="popup"></div>
 
