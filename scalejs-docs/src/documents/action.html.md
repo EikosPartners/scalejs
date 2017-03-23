@@ -380,7 +380,52 @@ isPage: true
         "output": true,
         "classes": "editor",
         "outputClasses": "output"
-    }
+    };
+
+    var renderExample = {
+        "type": "editor",
+        "id": "renderExample",
+        "value": [
+            {
+                "type": "action",
+                "actionType": "ajax",
+                "text": "Submit",
+                "options": {
+                    "target": {
+                        "uri": "colors"
+                    },
+                    "nextActions": [
+                        {
+                            "type": "action",
+                            "actionType": "event",
+                            "options": {
+                                "target": "result.render",
+                                "useOptions": true,
+                                "paramsKey": "data",
+                                "data": {
+                                    "data": {
+                                        "type": "action",
+                                        "actionType": "redirect",
+                                        "text": "Redirect",
+                                        "options": {
+                                            "target": "https://www.google.com"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "render",
+                "id": "result"
+            }
+        ],
+        "output": true,
+        "classes": "editor",
+        "outputClasses": "output"
+    };
 </script>
 
 # How to use PJSON Actions
@@ -432,6 +477,10 @@ Ajax actions provide a very useful feature with next and error actions. Simply s
 
 To see what happens when an error occurs in the ajax request, try changing the uri to something else!
 <div class="editor-container container-large" data-bind="metadataFactory: nextErrorActions"></div>
+
+### __Using the Render Component__
+You can use the PJSON Render component to conditionally render another component after an ajax action is complete. In the example below, on a successful ajax call a redirect button will be rendered.
+<div class="editor-container container-large" data-bind="metadataFactory: renderExample"></div>
 
 <hr>
 
