@@ -11,15 +11,15 @@ var _scalejs2 = _interopRequireDefault(_scalejs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var _base$type = _scalejs2.default.type;
-var is = _base$type.is;
-var typeOf = _base$type.typeOf;
-var _base$object = _scalejs2.default.object;
-var has = _base$object.has;
-var valueOrDefault = _base$object.valueOrDefault;
-var get = _base$object.get;
-var merge = _base$object.merge;
-var extend = _base$object.extend;
+var _base$type = _scalejs2.default.type,
+    is = _base$type.is,
+    typeOf = _base$type.typeOf;
+var _base$object = _scalejs2.default.object,
+    has = _base$object.has,
+    valueOrDefault = _base$object.valueOrDefault,
+    get = _base$object.get,
+    merge = _base$object.merge,
+    extend = _base$object.extend;
 exports.is = is;
 exports.typeOf = typeOf;
 exports.has = has;

@@ -6,7 +6,7 @@
 
 /*global define*/
 import type from './scalejs.base.type';
-    
+
 
     var is = type.is;
 
@@ -82,7 +82,8 @@ import type from './scalejs.base.type';
         for (p in supplier) {
             if (supplier.hasOwnProperty(p)) {
                 if ( has(supplier, p) && has(receiver, p) &&
-                     supplier[p].constructor === Object
+                     supplier[p].constructor === Object &&
+                     receiver[p].constructor === Object
                 ) {
                     receiver[p] = mix(receiver[p], supplier[p]);
                 } else {
@@ -226,5 +227,3 @@ import type from './scalejs.base.type';
         get:            get,
         stringify:      stringify
     };
-
-

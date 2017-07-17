@@ -4,11 +4,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; }; /**
-                                                                                                                                                                                                                                                   * Provides object functionality to scalejs base
-                                                                                                                                                                                                                                                   * @namespace scalejs.base
-                                                                                                                                                                                                                                                   * @module object
-                                                                                                                                                                                                                                                   */
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+                                                                                                                                                                                                                                                                               * Provides object functionality to scalejs base
+                                                                                                                                                                                                                                                                               * @namespace scalejs.base
+                                                                                                                                                                                                                                                                               * @module object
+                                                                                                                                                                                                                                                                               */
 
 /*global define*/
 
@@ -93,7 +93,7 @@ function mix(receiver, supplier) {
     var p;
     for (p in supplier) {
         if (supplier.hasOwnProperty(p)) {
-            if (has(supplier, p) && has(receiver, p) && supplier[p].constructor === Object) {
+            if (has(supplier, p) && has(receiver, p) && supplier[p].constructor === Object && receiver[p].constructor === Object) {
                 receiver[p] = mix(receiver[p], supplier[p]);
             } else {
                 receiver[p] = supplier[p];
